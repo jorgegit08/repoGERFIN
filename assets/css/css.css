@@ -1,0 +1,11 @@
+.bg{
+    width:100%;
+    height: 100%;
+    background-size: cover;
+}
+.box1{
+    width: 500px;
+    height: 400px;
+    background-color: gray;
+    position: absolute;
+}
