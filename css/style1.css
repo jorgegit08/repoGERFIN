@@ -1,0 +1,88 @@
+<<<<<<< HEAD:assets/css/style1.css
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.box1{
+    width: 500;
+    height: 400;
+    background-color: rgb(222, 225, 236);
+    border-radius: 10px;
+    text-align: center;
+}
+input[type=text], input[type=password] {   
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid rgb(75, 136, 172);   
+    box-sizing: border-box; 
+}
+.login:hover {   
+    opacity: 0.7;   
+}   
+.login {   
+    background-color: #103270;   
+    width: 100%;  
+     color: rgb(214, 235, 233);   
+     padding: 15px;   
+     margin: 10px 0px;   
+     border: none;   
+     cursor: pointer;   
+=======
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.box1{
+    width: 500;
+    height: 400;
+    background-color: rgb(222, 225, 236);
+    border-radius: 10px;
+    text-align: center;
+}
+input[type=text], input[type=password] {   
+    width: 100%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid rgb(75, 136, 172);   
+    box-sizing: border-box; 
+}
+button:hover {   
+    opacity: 0.7;   
+}   
+button {   
+    background-color: #103270;   
+    width: 100%;  
+     color: rgb(214, 235, 233);   
+     padding: 15px;   
+     margin: 10px 0px;   
+     border: none;   
+     cursor: pointer;   
+>>>>>>> 6beab142c2c8d7a6deb3e31ebe4c8bab3a416adf:assets/css/style.css.css
+      }    
