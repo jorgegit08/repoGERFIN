@@ -1,28 +1,33 @@
 <?php
 
-if(isset($_POST['email'])&& !empty($_POST['email']) &&isset($_POST['senha'])&& !empty($_POST['senha'])){
+if( isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) && !empty($_POST['senha'])){
+
         require 'config.php';
         require 'Usuario.class.php';
 
-        $u = new Usuario();
+        $u=new Usuario;
 
-        $email = addslashes($_POST['email']);
-        $senha = addslashes($_POST['senha']);
+        $email= addslashes($_POST['email']);
+        $senha= addslashes($_POST['senha']);
 
         if($u->login($email,$senha) == true){
-                if(isset($_SESSION['email'])){
-                        header ("Location menuInicial.php");
+                if( isset($_SESSION['email'])){
+                        header("Location menuInicial.php");
+                }else{
+                        header("Location: index.php");
                 }
         }else{
                 echo"<script language='javascript' type='text/javascript'>
-        alert('Login e/ou senha incorretos');window.location
-        .href='index.php';</script>";
-
+                alert('Login e/ou senha incorretos');window.location
+                .href='index.php';</script>";
         }
 
-        }else{
-                header("Location: index.php");
+}else{
+        header("Location: index.php");
 }
+
+
+       
 
 ?>
 
@@ -73,22 +78,6 @@ if(isset($_POST['email'])&& !empty($_POST['email']) &&isset($_POST['senha'])&& !
                 <ul>
                         <li><a href="" class="voltar">Voltar</a></li>
                         <li><a href="">Honorários De Prolabore</a></li>
-        $email = addslashes($_POST['email']);
-        $senha = addslashes($_POST['senha']);
-
-        if($u->login($email,$senha) == true){
-                if(isset($_SESSION['email'])){
-                        header ("Location menuInicial.php");
-                }
-        }else{
-                echo"<script language='javascript' type='text/javascript'>
-        alert('Login e/ou senha incorretos');window.location
-        .href='index.php';</script>";
-
-        }
-
-        }else{
-                header("Location: index.php");
-}
-
-?>
+                </ul>
+        </nav>
+</body>
