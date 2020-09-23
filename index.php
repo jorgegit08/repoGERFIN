@@ -29,7 +29,7 @@
                 </form>
                 <input type="checkbox" checked="checked"> Manter conectado <br>
                     Esqueceu a<a href="#"> senha? </a> <br>
-                    <a href="#">Não tenho conta</a>
+                    <a href="cadastro.php">Não tenho conta</a>
             </div>
         </div>
     </body>

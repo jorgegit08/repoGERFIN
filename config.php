@@ -5,7 +5,7 @@ session_start();
 $localhost ="localhost";
 $user= "root";
 $passw= "";
-$banco="test";
+$banco="gerfin";
 
 global $pdo;
 

@@ -1,0 +1,179 @@
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.menu{
+	height: 100%;
+	position: fixed;
+	background-color: #333;
+	top:0;
+	overflow: hidden;
+	transition: all .2s;
+
+}
+
+#principal{
+	width: 200px;	
+}
+
+ul{
+	list-style: none;
+
+}
+
+ul li a{
+	display: block;
+	font-size: 18px;
+	font-family: 'arial';
+	padding: 12px;
+	border-bottom: solid 1.5px #000;
+	color: #ccc;
+	text-decoration: none;
+	transition: all .2s;
+
+}
+
+ul li span{
+
+	float: right;
+	padding-right: 10px;
+}
+
+ul li a:hover{
+	background-color: #494950;
+}
+
+h1{
+	font-size: 30px;
+	font-family: 'arial';
+	color: #ccc;
+	border-bottom: solid 1.5px #000;
+	padding-top: 8%;
+	padding-bottom: 8%;
+	background-color: #1c1c1c;
+
+}
+
+.voltar{
+	margin-top: 60px;
+	background-color: #111;
+	border-left: solid 5px #444;
+}
+
+#Contasapagar,
+#ContasaReceber{
+	width: 250px;
+	left: -250px;
+}
+#Relatorios,
+#Agenda{
+	width: 250px;
+	left: -250px;
+}
+
+#cliente{
+	width: 250px;
+	float: left;
+}
+
+
+#Contasapagar:target,
+#ContasaReceber:target{
+	transform: translateX(250px);
+}
+#Relatorios:target,
+#Agenda:target{
+	transform: translateX(250px);
+}
+
+#cliente:target{
+	transform: translateX(250px);
+}
+input{
+	width: 500px;
+	border-radius: 5px;
+	background: rgb(223, 218, 218);
+	transition:all 0.3s ease;
+	padding: 7px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+input[type="submit"]{
+	cursor: pointer;
+	transition: all 0.2s linear;
+	font-weight: bold;
+	font-size: 15px;
+}
+input[type="submit"]:hover{
+	background: rgb(151, 146, 146);
+}
+.cadastro{
+	display: flex;
+	margin-left: 250px;
+	line-height: 20px;
+	font-size: 20px;
+	margin-top:  20px;
+	margin-left: 260px;
+}
+.tit{
+	display: flex;
+	justify-content: center;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.container{
+	display: flex;
+	margin-left: 270px;
+}
+img{
+	width : 35px  ;
+	height:  35px ;
+	margin-left: 10px;
+}
+.filtro{
+	width: 575px;
+}
+
+.imagem:hover .menufiltro{
+	display: block;
+	background-color: rgb(50, 42, 165);
+}
+.menufiltro a{
+	text-decoration: none;
+	color: black;
+}
+.arrow{
+	background-color: black;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+}
+.menufiltro:hover{
+	background-color: crimson;
+}
+.pesq{
+	display: flex;
+	width: 1030px;
+	height: 200px;
+	background-color: rgb(231, 225, 225);
+	margin-left: 270px;
+	margin-top: 40px;
+	border-radius: 5px;
+}
+table,td,th{
+	
+	text-align: center;
+}
+table{
+	border-collapse: collapse;
+	width: 1000px;
+}
+th{
+	background-color: rgb(247, 243, 243);
+	color: rgba(58, 56, 54, 0.76);
+}
+
