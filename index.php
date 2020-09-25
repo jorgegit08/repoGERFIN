@@ -24,7 +24,7 @@
                     <input type="text" placeholder="E-mail" name="email" id="email" required><br>
 
                     <input type="password" placeholder="Senha" name="senha" id="senha" required> <br>
-                    <input  type="submit" value="Login" > <br>
+                    <input type="submit" value="Login" > <br>
 
                 </form>
                 <input type="checkbox" checked="checked"> Manter conectado <br>

@@ -20,11 +20,11 @@ if(isset($_POST['email']) && !empty($_POST['email'])
         $nascimento = addslashes($_POST['nascimento']);
         $telefone = addslashes($_POST['telefone']);
 
-        $u->cadastrar($cpf,$nome,$senha,$email,$telefone,$nascimento);
+        $u->alterarUsuario($cpf,$nome,$senha,$email,$telefone,$nascimento);
 
         echo"<script language='javascript' type='text/javascript'>
-                alert('Cadastro realizado!');
-                window.location.href='index.php';
+                alert('Dados do usuário alterados!');
+                window.location.href='alterarUsuario.php';
             </script>";
     }else{
         header("Location: index.php");
