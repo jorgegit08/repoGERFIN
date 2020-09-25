@@ -1,6 +1,6 @@
 <?php
 
-require 'config.php';
+require 'conexaoDB.php';
 require 'Usuario.class.php';
 
 ?>
@@ -14,7 +14,7 @@ require 'Usuario.class.php';
 <h1 class="tit">Cadastro</h1>
 <div class="cadastro">
 
-        <form method="post" action="cadastroSalvar.php">
+        <form method="post" action="cadastrarUsuarioSalvar.php">
 
                 <p>
                   <label for="nome">Nome:</label><br>

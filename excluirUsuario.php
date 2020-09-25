@@ -1,7 +1,7 @@
 <?php
 
 require 'Usuario.class.php';
-require 'config.php';
+require 'conexaoDB.php';
 
 $u = new Usuario();
 

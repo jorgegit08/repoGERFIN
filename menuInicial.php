@@ -1,6 +1,6 @@
 <?php
 
-require 'config.php';
+require 'conexaoDB.php';
 require 'Usuario.class.php';
 
 $u=new Usuario;
@@ -51,7 +51,7 @@ if( isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) 
 			<h1 align="center">GERFIN</h1>
 			<li><a href="">Início</a></li>
 			<li><a href="alterarUsuario.php">meus dados</a></li>
-			<li><a href="#cliente">Cliente<span>+</span></a></i></li>
+			<li><a href="consultarCliente.php">Cliente<span>+</span></a></i></li>
 			<li><a href="#Contasapagar">Contas a pagar<span>+</span></a></li>
 			<li><a href="#ContasaReceber">Contas a Receber<span>+</span></a></li>
 			<li><a href="#Relatorios">Relatórios<span>+</span></a></li>
@@ -105,15 +105,7 @@ if( isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) 
 			<li><a href="">Marcadores Mensais</a></li>
 		</ul>
 	</nav>
-	<?php
-
-	$u=new Usuario;
-
-	echo "cpf: ".$u->cpf;
-
-
-
-	?>
+	
 
 </body>
 </html>

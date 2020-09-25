@@ -101,14 +101,19 @@ input[type=text], input[type=password] {
     box-sizing: border-box; 
 }
 
-input[type="submit"]{
+input[type=submit], input[type=button]{
 	cursor: pointer;
 	transition: all 0.2s linear;
-	font-weight: bold;
 	font-size: 15px;
+	width: 100%;
+	font-weight: bold;
 }
-input[type="submit"]:hover{
+input[type=submit]:hover{
 	background: rgb(151, 146, 146);
+}
+input[type=button]:hover{
+	background: rgb(151, 146, 146);
+	color: red;
 }
 .cadastro{
 	display: flex;
@@ -178,4 +183,10 @@ th{
 	background-color: rgb(247, 243, 243);
 	color: rgba(58, 56, 54, 0.76);
 }
-
+.acoes{
+	cursor: pointer;
+	transition: all 0.2s linear;
+	font-size: 15px;
+	width: 5px;
+	font-weight: bold;
+}

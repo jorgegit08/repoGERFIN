@@ -1,7 +1,7 @@
 <?php
 
 require 'Usuario.class.php';
-require 'config.php';
+require 'conexaoDB.php';
 
 $u = new Usuario();
 
@@ -20,7 +20,7 @@ if(isset($_POST['email']) && !empty($_POST['email'])
         $nascimento = addslashes($_POST['nascimento']);
         $telefone = addslashes($_POST['telefone']);
 
-        $u->cadastrar($cpf,$nome,$senha,$email,$telefone,$nascimento);
+        $u->cadastrarUsuario($cpf,$nome,$senha,$email,$telefone,$nascimento);
 
         echo"<script language='javascript' type='text/javascript'>
                 alert('Cadastro realizado!');

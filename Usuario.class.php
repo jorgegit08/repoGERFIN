@@ -28,7 +28,7 @@
         }
     } 
 
-    public function cadastrar($cpf,$nome,$senha,$email,$telefone,$nascimento){
+    public function cadastrarUsuario($cpf,$nome,$senha,$email,$telefone,$nascimento){
         global $pdo;
 
         $sql = "SELECT * FROM usuarios WHERE email=:email";
