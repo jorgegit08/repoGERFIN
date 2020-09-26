@@ -42,10 +42,11 @@
     }
     public function alterarCliente($idCliente,$Cnpj,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone){
         global $pdo;
-        //$this->consultarUsuario();
+        
+		$this->consultarCliente($idCliente);
 
         $sql ="UPDATE cliente SET txtCnpj=:txtCnpj,txtContatoDireto=:txtContatoDireto,txtEmail=:txtEmail,txtEndereco=:txtEndereco,txtInscricaoEstadual=:txtInscricaoEstadual,txtRazaoSocial=:txtRazaoSocial,txtTelefone=:txtTelefone WHERE idCliente=:idCliente";
-        
+        $sql =$pdo->prepare($sql);
         $sql->bindValue("txtCnpj",$Cnpj);
         $sql->bindValue("txtContatoDireto",$txtContatoDireto);
         $sql->bindValue("txtEmail",$txtEmail);
@@ -56,6 +57,7 @@
         $sql->bindValue("idCliente",$idCliente);
         $sql->execute();
     }
+	
     public function consultarCliente($idCliente){
         global $pdo;
         

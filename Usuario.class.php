@@ -1,50 +1,53 @@
-<?php
-
+<?php 
  class Usuario{
+	
+	public $idUsuario="";
+    public $txtCPF="";
+    public $txtNome="";
+    public $txtSenha="";
+    public $txtEmail="";
+    public $txtTelefone="";
+    public $datNascimento="";
 
-    public $cpf="";
-    public $nome="";
-    public $senha="";
-    public $email="";
-    public $telefone="";
-    public $nascimento="";
-
-    public function login($email,$senha){
+    public function login($txtEmail,$txtSenha){
         global $pdo;
 
-        $sql = "SELECT * FROM usuarios WHERE email =:email AND senha = :senha";
+        $sql = "SELECT * FROM usuario WHERE txtEmail = :txtEmail AND txtSenha = :txtSenha";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue("email",$email);
-        $sql->bindValue("senha",md5($senha));
+        $sql->bindValue("txtEmail",$txtEmail);
+        $sql->bindValue("txtSenha",md5($txtSenha));
         $sql->execute();
-
-        if($sql->rowCount() >0){
+		
+        if($sql->rowCount() > 0){
             $dado = $sql->fetch();
-
-            $_SESSION['email'] = $dado['email'];
+			
+            $_SESSION['txtEmail'] = $dado['txtEmail'];
+			
             return true;        
         }else{
             return false;
         }
     } 
 
-    public function cadastrarUsuario($cpf,$nome,$senha,$email,$telefone,$nascimento){
+    public function cadastrarUsuario($txtCPF,$txtNome,$txtSenha,$txtEmail,$txtTelefone,$datNascimento){
         global $pdo;
 
-        $sql = "SELECT * FROM usuarios WHERE email=:email";
+        $sql = "SELECT * FROM usuario WHERE txtEmail = :txtEmail";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue("email",$email);
+        $sql->bindValue("txtEmail",$txtEmail);
         $sql->execute();
-
+		
+			
+		
         if($sql->rowCount()=== 0){
-            $sql ="INSERT into usuarios (cpf,nome,senha,email,telefone,nascimento) VALUES (:cpf,:nome,:senha,:email,:telefone,:nascimento)";
+            $sql ="INSERT into usuario (txtCPF,txtNome,txtSenha,txtEmail,txtTelefone,datNascimento) VALUES (:txtCPF,:txtNome,:txtSenha,:txtEmail,:txtTelefone,:datNascimento)";
             $sql =$pdo->prepare($sql);
-            $sql->bindValue("cpf",$cpf);
-            $sql->bindValue("nome",$nome);
-            $sql->bindValue("senha",md5($senha));
-            $sql->bindValue("email",$email);
-            $sql->bindValue("telefone",$telefone);
-            $sql->bindValue("nascimento",$nascimento);
+            $sql->bindValue("txtCPF",$txtCPF);
+            $sql->bindValue("txtNome",$txtNome);
+            $sql->bindValue("txtSenha",md5($txtSenha));
+            $sql->bindValue("txtEmail",$txtEmail);
+            $sql->bindValue("txtTelefone",$txtTelefone);
+            $sql->bindValue("datNascimento",$datNascimento);
             $sql->execute();
 
             return true;
@@ -52,38 +55,40 @@
             return false;
         }
     }
-    public function alterarUsuario($cpf,$nome,$senha,$email,$telefone,$nascimento){
+	
+    public function alterarUsuario($txtCPF,$txtNome,$txtSenha,$txtEmail,$txtTelefone,$datNascimento){
         global $pdo;
         $this->consultarUsuario();
-
-        $sql ="UPDATE usuarios SET cpf=:cpf,nome=:nome,senha=:senha,email=:email,telefone=:telefone,nascimento=:nascimento WHERE cpf=:cpfAtual";
+	
+        $sql ="UPDATE usuario SET txtCPF=:txtCPF,txtNome=:txtNome,txtSenha=:txtSenha,txtEmail=:txtEmail,txtTelefone=:txtTelefone,datNascimento=:datNascimento WHERE txtCPF = :cpfAtual";
         $sql =$pdo->prepare($sql);
-        $sql->bindValue("cpf",$cpf);
-        $sql->bindValue("nome",$nome);
-        $sql->bindValue("senha",md5($senha));
-        $sql->bindValue("email",$email);
-        $sql->bindValue("telefone",$telefone);
-        $sql->bindValue("nascimento",$nascimento);
-        $sql->bindValue("cpfAtual",$this->cpf);
+        $sql->bindValue("txtCPF",$txtCPF);
+        $sql->bindValue("txtNome",$txtNome);
+        $sql->bindValue("txtSenha",md5($txtSenha));
+        $sql->bindValue("txtEmail",$txtEmail);
+        $sql->bindValue("txtTelefone",$txtTelefone);
+        $sql->bindValue("datNascimento",$datNascimento);
+        $sql->bindValue("cpfAtual",$this->txtCPF);
         $sql->execute();
     }
     public function consultarUsuario(){
         global $pdo;
-        
-        $sql = "SELECT cpf,nome,senha,email,telefone,nascimento FROM usuarios WHERE email=:email";
+
+        $sql = "SELECT idUsuario,txtCPF,txtNome,txtSenha,txtEmail,txtTelefone,datNascimento FROM usuario WHERE txtEmail=:txtEmail";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue("email",$_SESSION['email']);
+        $sql->bindValue("txtEmail",$_SESSION['txtEmail']);
         $sql->execute();
 
         if($sql->rowCount() >0){
             $dado = $sql->fetch();
 
-            $this->nome = $dado['nome'];
-            $this->senha = $dado['senha'];
-            $this->email = $dado['email'];
-            $this->telefone = $dado['telefone'];
-            $this->nascimento = $dado['nascimento'];
-            $this->cpf = $dado['cpf'];
+            $this->txtNome = $dado['txtNome'];
+            $this->txtSenha = $dado['txtSenha'];
+            $this->txtEmail = $dado['txtEmail'];
+            $this->txtTelefone = $dado['txtTelefone'];
+            $this->datNascimento = $dado['datNascimento'];
+            $this->txtCPF = $dado['txtCPF'];
+			$this->idUsuario = $dado['idUsuario'];
 
             return true;        
         }else{
@@ -91,16 +96,19 @@
         }
 
     }
-    public function excluirUsuario($senha){
+    public function excluirUsuario($txtSenha){
         global $pdo;
 
-        $sql = "DELETE FROM usuarios WHERE email =:email AND senha = :senha";
+        $sql = "DELETE FROM usuario WHERE txtEmail = :txtEmail AND txtSenha = :txtSenha";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue("email",$_SESSION['email']);
-        $sql->bindValue("senha",md5($senha));
+        $sql->bindValue("txtEmail",$_SESSION['txtEmail']);
+        $sql->bindValue("txtSenha",md5($txtSenha));
         $sql->execute();
-
-        if($sql->rowCount() >0){
+		
+		//echo $_SESSION['txtEmail'] . " " . $txtSenha . " " . md5($txtSenha) . " ";
+		//die("numLinhas: " . $sql->rowCount());
+		
+        if($sql->rowCount() > 0){
 
             return true;       
         }else{

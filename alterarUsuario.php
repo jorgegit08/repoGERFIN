@@ -15,9 +15,9 @@ require 'Usuario.class.php';
     <script>
         function excluirConta(){
             
-            senha = prompt('Digite sua senha para confimar a exclusão da conta','');
-            if(senha != null  && senha !=""){
-                window.location.href='excluirUsuario.php?senha='+senha;
+            txtSenha = prompt('Digite sua senha para confimar a exclusão da conta','');
+            if(txtSenha != null  && txtSenha !=""){
+                window.location.href='excluirUsuario.php?txtSenha='+txtSenha;
             }else{
                 alert('Operação cancelada pelo usuário')
             }
@@ -101,30 +101,30 @@ require 'Usuario.class.php';
         <form method="post" action="alterarUsuarioSalvar.php">
 
                 <p>
-                  <label for="nome">Nome:</label><br>
-                  <input id="nome" name="nome" required="required" type="text"  value="<?=$u->nome?>"/>
+                  <label for="txtNome">Nome:</label><br>
+                  <input id="txtNome" name="txtNome" required="required" type="text"  value="<?=$u->txtNome?>"/>
                 </p>
                 <p>
-                        <label for="cpf">CPF/CNPJ:</label><br>
-                        <input id="cpf" name="cpf" required="required" type="text"  value="<?=$u->cpf?>"/>
+                        <label for="txtCPF">CPF/CNPJ:</label><br>
+                        <input id="txtCPF" name="txtCPF" required="required" type="text"  value="<?=$u->txtCPF?>"/>
                   </p>
 
                 <p>
-                  <label for="email">e-mail:</label><br>
-                  <input id="email" name="email" required="required" type="email" value="<?=$u->email?>"/>
+                  <label for="txtEmail">e-mail:</label><br>
+                  <input id="txtEmail" name="txtEmail" required="required" type="email" value="<?=$u->txtEmail?>"/>
                 </p>
 
                 <p>
-                  <label for="nascimento">Data de nascimento:</label><br>
-                  <input id="nascimento" name="nascimento" required="required" type="date" value="<?=$u->nascimento?>"/>
+                  <label for="datNascimento">Data de nascimento:</label><br>
+                  <input id="datNascimento" name="datNascimento" required="required" type="date" value="<?=$u->datNascimento?>"/>
                 </p>
                 <p>
-                        <label for="telefone">Telefone:</label><br>
-                        <input id="telefone" name="telefone" required="required" type="text" value="<?=$u->telefone?>" />
+                        <label for="txtTelefone">Telefone:</label><br>
+                        <input id="txtTelefone" name="txtTelefone" required="required" type="text" value="<?=$u->txtTelefone?>" />
                 </p>
                   <p>
-                        <label for="senha">Senha:</label><br>
-                        <input id="senha" name="senha" required="required" type="password" value="<?=$u->senha?>" /><br>
+                        <label for="txtSenha">Senha:</label><br>
+                        <input id="txtSenha" name="txtSenha" required="required" type="password" value="<?=$u->txtSenha?>" /><br>
                         
                 </p>
                 <p>

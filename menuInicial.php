@@ -12,7 +12,8 @@ if( isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) 
         $senha= addslashes($_POST['senha']);
 
         if($u->login($email,$senha) == true){
-                if( isset($_SESSION['email'])){
+
+				if( isset($_SESSION['email'])){
                         header("Location menuInicial.php");
                 }else{
                         header("Location: index.php");
@@ -65,7 +66,7 @@ if( isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) 
 		<ul>
 			<li><a href="" class="voltar">Voltar</a></li>
 			<li><a href="">Novo</a></li>
-			<li><a href="">Consulta</a></li>
+			<li><a href="consultarCliente.php">Consulta</a></li>
         </ul>
     </nav>
 

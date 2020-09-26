@@ -5,25 +5,23 @@ require 'conexaoDB.php';
 
 $u = new Usuario();
 
-
-
-if(isset($_GET['senha']) && !empty($_GET['senha'])){
+if(isset($_GET['txtSenha']) && !empty($_GET['txtSenha'])){
         
-    $senha = addslashes($_GET['senha']);
+    $txtSenha = addslashes($_GET['txtSenha']);
         
-
-    if($u->excluirUsuario($senha)){
+    if($u->excluirUsuario($txtSenha)){
 
         $_SESSION = array();
         echo"   <script language='javascript' type='text/javascript'>
                     alert('Usuário excluído com sucesso!');
                     window.location.href='index.php';
                 </script>";
-                
+
     }else{
         echo"   <script language='javascript' type='text/javascript'>
-                    alert('Operação cancelada!');
+                    alert('Não foi possível excluir Usuário!');
+					window.location.href='alterarUsuario.php';
                 </script>";
     }
 }
-    ?>
+?>
