@@ -6,19 +6,19 @@ require 'conexaoDB.php';
 $u = new Usuario();
 
 
-if(isset($_POST['email']) && !empty($_POST['email'])
-    &&    isset($_POST['cpf']) && !empty($_POST['cpf'])
-    &&    isset($_POST['senha']) && !empty($_POST['senha'])
-    &&    isset($_POST['nome']) && !empty($_POST['nome'])
-    &&    isset($_POST['nascimento']) && !empty($_POST['nascimento'])
-    &&    isset($_POST['telefone']) && !empty($_POST['telefone'])   ){
+if(isset($_POST['txtEmail']) && !empty($_POST['txtEmail'])
+    &&    isset($_POST['txtCPF']) && !empty($_POST['txtCPF'])
+    &&    isset($_POST['txtSenha']) && !empty($_POST['txtSenha'])
+    &&    isset($_POST['txtNome']) && !empty($_POST['txtNome'])
+    &&    isset($_POST['datNascimento']) && !empty($_POST['datNascimento'])
+    &&    isset($_POST['txtTelefone']) && !empty($_POST['txtTelefone'])   ){
 
-        $email = addslashes($_POST['email']);
-        $cpf = addslashes($_POST['cpf']);
-        $nome = addslashes($_POST['nome']);
-        $senha = addslashes($_POST['senha']);
-        $nascimento = addslashes($_POST['nascimento']);
-        $telefone = addslashes($_POST['telefone']);
+        $email = addslashes($_POST['txtEmail']);
+        $cpf = addslashes($_POST['txtCPF']);
+        $nome = addslashes($_POST['txtNome']);
+        $senha = addslashes($_POST['txtSenha']);
+        $nascimento = addslashes($_POST['datNascimento']);
+        $telefone = addslashes($_POST['txtTelefone']);
 
         $u->cadastrarUsuario($cpf,$nome,$senha,$email,$telefone,$nascimento);
 

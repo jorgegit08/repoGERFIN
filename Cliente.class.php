@@ -3,7 +3,7 @@
  class Cliente{
 
     public $idCliente="";
-    public $txtCnpj="";
+    public $txtCNPJ="";
     public $txtContatoDireto="";
     public $txtEmail="";
     public $txtEndereco="";
@@ -12,21 +12,21 @@
     public $txtTelefone="";
 
     //$idCliente,
-    //$txtCnpj,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone
+    //$txtCNPJ,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone
     
 
-    public function cadastrarCliente($txtCnpj,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone){
+    public function cadastrarCliente($txtCNPJ,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone){
         global $pdo;
-
-        $sql = "SELECT * FROM cliente WHERE txtcnpj=:txtcnpj";
+		
+        $sql = "SELECT * FROM cliente WHERE txtCNPJ=:txtCNPJ";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue("txtcnpj",$txtcnpj);
+        $sql->bindValue("txtCNPJ",$txtCNPJ);
         $sql->execute();
 
         if($sql->rowCount()=== 0){
-            $sql ="INSERT into cliente (txtCnpj,txtContatoDireto,txtEmail,txtEndereco,txtInscricaoEstadual,txtRazaoSocial,txtTelefone) VALUES (:txtCnpj,:txtContatoDireto,:txtEmail,:txtEndereco,:txtInscricaoEstadual,:txtRazaoSocial,;txtTelefone)";
+            $sql ="INSERT into cliente (txtCNPJ,txtContatoDireto,txtEmail,txtEndereco,txtInscricaoEstadual,txtRazaoSocial,txtTelefone) VALUES (:txtCNPJ,:txtContatoDireto,:txtEmail,:txtEndereco,:txtInscricaoEstadual,:txtRazaoSocial,:txtTelefone)";
             $sql =$pdo->prepare($sql);
-            $sql->bindValue("txtCnpj",$txtCnpj);
+            $sql->bindValue("txtCNPJ",$txtCNPJ);
             $sql->bindValue("txtContatoDireto",$txtContatoDireto);
             $sql->bindValue("txtEmail",$txtEmail);
             $sql->bindValue("txtEndereco",$txtEndereco);
@@ -40,14 +40,14 @@
             return false;
         }
     }
-    public function alterarCliente($idCliente,$Cnpj,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone){
+    public function alterarCliente($idCliente,$txtCNPJ,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone){
         global $pdo;
         
 		$this->consultarCliente($idCliente);
 
-        $sql ="UPDATE cliente SET txtCnpj=:txtCnpj,txtContatoDireto=:txtContatoDireto,txtEmail=:txtEmail,txtEndereco=:txtEndereco,txtInscricaoEstadual=:txtInscricaoEstadual,txtRazaoSocial=:txtRazaoSocial,txtTelefone=:txtTelefone WHERE idCliente=:idCliente";
+        $sql ="UPDATE cliente SET txtCNPJ=:txtCNPJ,txtContatoDireto=:txtContatoDireto,txtEmail=:txtEmail,txtEndereco=:txtEndereco,txtInscricaoEstadual=:txtInscricaoEstadual,txtRazaoSocial=:txtRazaoSocial,txtTelefone=:txtTelefone WHERE idCliente=:idCliente";
         $sql =$pdo->prepare($sql);
-        $sql->bindValue("txtCnpj",$Cnpj);
+        $sql->bindValue("txtCNPJ",$txtCNPJ);
         $sql->bindValue("txtContatoDireto",$txtContatoDireto);
         $sql->bindValue("txtEmail",$txtEmail);
         $sql->bindValue("txtEndereco",$txtEndereco);
@@ -61,7 +61,7 @@
     public function consultarCliente($idCliente){
         global $pdo;
         
-        $sql = "SELECT txtCnpj,txtContatoDireto,txtEmail,txtEndereco,txtInscricaoEstadual,txtRazaoSocial,txtTelefone FROM cliente WHERE idCliente=:idCliente";
+        $sql = "SELECT txtCNPJ,txtContatoDireto,txtEmail,txtEndereco,txtInscricaoEstadual,txtRazaoSocial,txtTelefone FROM cliente WHERE idCliente=:idCliente";
         $sql = $pdo->prepare($sql);
         $sql->bindValue("idCliente",$idCliente);
         $sql->execute();
@@ -69,7 +69,7 @@
         if($sql->rowCount() >0){
             $dado = $sql->fetch();
 
-            $this->txtCnpj = $dado['txtCnpj'];
+            $this->txtCNPJ = $dado['txtCNPJ'];
             $this->txtContatoDireto = $dado['txtContatoDireto'];
             $this->txtEmail = $dado['txtEmail'];
             $this->txtEndereco = $dado['txtEndereco'];
@@ -87,7 +87,7 @@
         global $pdo;
 
 
-        $sql = "SELECT idCliente,txtCnpj,txtContatoDireto,txtEmail,txtEndereco,txtInscricaoEstadual,txtRazaoSocial,txtTelefone FROM cliente" ;
+        $sql = "SELECT idCliente,txtCNPJ,txtContatoDireto,txtEmail,txtEndereco,txtInscricaoEstadual,txtRazaoSocial,txtTelefone FROM cliente" ;
         $sql = $pdo->prepare($sql);
         $sql->execute();
 
@@ -97,12 +97,12 @@
         return $dado;
     }
 
-    public function excluirUsuario($idCliente){
+    public function excluirCliente($idCliente){
         global $pdo;
 
         $sql = "DELETE FROM cliente WHERE idCliente=:idCliente";
         $sql = $pdo->prepare($sql);
-        $sql->bindValue("idCLiente",$idCliente);
+        $sql->bindValue("idCliente",$idCliente);
         $sql->execute();
 
         if($sql->rowCount() >0){

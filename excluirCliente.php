@@ -12,61 +12,53 @@ require 'conexaoDB.php';
 
 <body>
 	
-	<nav class="menu" id="cliente">
-		<ul>
-			<h1 align="center">GERFIN</h1>
-			<li><a href="" class="voltar">Voltar</a></li>
-			<li><a href="">Novo</a></li>
-			<li><a href="">Consulta</a></li>
-		</ul>
-		</nav>
-		<h1 class="tit">Cadastro</h1> 
-		<?php
+	<?php require 'menu.php';?>
+		
+	<h1 class="tit">Excluir Cliente</h1> 
+	<?php
 		$c=new Cliente;
-		$c->consultarCliente($_GET('idCliente'));
+		$c->consultarCliente($_GET['idCliente']);
+	?>
+		
+	<div class="cadastro">
+		
+		<form method="post" action="excluirClienteSalvar.php"> 
+			<p> 
+				<label for="txtRazaoSocial">Nome:</label><br>
+				<input id="txtRazaoSocial" name="txtRazaoSocial" required="required" disabled="disabled" value="<?=$c->txtRazaoSocial?>" type="text" placeholder="nome" />
+			</p>
+			<p> 
+				<label for="txtCNPJ">CPF/CNPJ:</label><br>
+				<input id="txtCNPJ" name="txtCNPJ" required="required" disabled="disabled" value="<?=$c->txtCNPJ?>" type="text" placeholder="99 999 999 999"/> 
+			</p>
+			<p> 
+				<label for="txtEmail">e-mail:</label><br>
+				<input id="txtEmail" name="txtEmail" required="required" disabled="disabled" type="email" value="<?=$c->txtEmail?>" placeholder="contato@htmlecsspro.com"/> 
+			</p>
+			<p> 
+				<label for="txtEndereco">endereço:</label><br>
+				<input id="txtEndereco" name="txtEndereco" required="required" disabled="disabled" type="text" value="<?=$c->txtEndereco?>" placeholder="contato@htmlecsspro.com"/> 
+			</p>
+			<p> 
+				<label for="txtContatoDireto">Contato direto:</label><br>
+				<input id="txtContatoDireto" name="txtContatoDireto" required="required" disabled="disabled" value="<?=$c->txtContatoDireto?>" type="text" placeholder="01/01/2000"/>
+			</p>
+			<p> 
+				<label for="txtTelefone">Telefone:</label><br>
+				<input id="txtTelefone" name="txtTelefone" required="required" disabled="disabled" type="text" value="<?=$c->txtTelefone?>" placeholder="99999 9999" />
+			</p>
+			<p> 
+				<label for="txtInscricaoEstadual">Inscrição estadual:</label><br>
+				<input id="txtInscricaoEstadual" name="txtInscricaoEstadual" required="required" disabled="disabled" type="text" value="<?=$c->txtInscricaoEstadual?>" placeholder="999999"/>
+			</p>
+			<p> 
+				<input id="idCliente" name="idCliente" type="hidden" value="<?=$_GET['idCliente']?>"/>
+			</p>
 
-
-
-		?>
-<div class="cadastro">
-	
-	<form method="post" action=""> 
-	
-		<p> 
-		  <label for="nome">Nome:</label><br>
-		  <input id="nome" name="nome" required="required" value="<?=$c->txtRazaoSocial?>" type="text" placeholder="nome" />
-		</p>
-		<p> 
-			<label for="CPFCNPJ">CPF/CNPJ:</label><br>
-			<input id="CPFCNPJ" name="CPFCNPJ" required="required" value="<?=$c->txtCnpj?>" type="text" placeholder="99 999 999 999"/> 
-		  </p>
-		 
-		<p> 
-		  <label for="email">e-mail:</label><br>
-		  <input id="email" name="email" required="required" type="email" value="<?=$c->txtEmail?>" placeholder="contato@htmlecsspro.com"/> 
-		</p>
-		<p> 
-			<label for="endereco">endereço:</label><br>
-			<input id="endereco" name="endereco" required="required" type="text" value="<?=$c->txtEndereco?>" placeholder="contato@htmlecsspro.com"/> 
-		  </p>
-		 
-		<p> 
-		  <label for="contatoDireto">Contato direto:</label><br>
-		  <input id="contatoDireto" name="contatoDireto" required="required" value="<?=$c->txtContatoDireto?>" type="text" placeholder="01/01/2000"/>
-		</p>
-		<p> 
-			<label for="telefone">Telefone:</label><br>
-			<input id="telefone" name="telefone" required="required" type="text" value="<?=$c->txtTelefone?>" placeholder="99999 9999" />
-		</p>
-		<p> 
-			<label for="inscri">Inscrição estadual:</label><br>
-			<input id="inscri" name="inscri" required="required" type="text" value="<?=$c->txtInscricaoEstadual?>" placeholder="999999"/>
-		  </p>
-		  
-		<p> 
-		  <input  type="submit" value="Cadastrar"/> 
-		</p>
-</div>
+			<p> 
+			  <input  type="submit" value="Excluir"/> 
+			</p>
+	</div>
 	
 </body>
 </html>

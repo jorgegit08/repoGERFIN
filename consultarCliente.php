@@ -1,7 +1,7 @@
 <?php
 require 'conexaoDB.php';
 require 'Cliente.class.php';
-
+require 'assets/dataTable/dataTable.js';
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ require 'Cliente.class.php';
 </head>
 
 <body>
+	
 	<script language="javascript">
 		function alterarCliente(idCliente){
 			window.location.href='alterarCliente.php?idCliente='+idCliente;
@@ -20,34 +21,24 @@ require 'Cliente.class.php';
 		function excluirCliente(idCliente){
 			window.location.href='excluirCliente.php?idCliente='+idCliente;
 		}
-
-
-
+		
+		function cadastrarCliente(){
+			window.location.href='cadastrarCliente.php';
+		}
+		
 	</script>	
 
-
-	<nav class="menu" id="cliente">
-		<ul>
-			<h1 align="center">GERFIN</h1>
-			<li><a href="" class="voltar">Voltar</a></li>
-			<li><a href="">Novo</a></li>
-			<li><a href="">Consulta</a></li>
-		</ul>
-		</nav>
-
-		<h1 class="tit">Clientes</h1>
-		<div class="container">
-			<input type="text" placeholder="Pesquisar">
-			<a href=""><img src="assets/imagens/busca.png" ></a>
-			
-		</div>
-	<?php
-	$c= new Cliente;
-
-	?>
-	<div class="pesq">
-			
-		<table>
+	<h1 class="tit">Clientes</h1>
+	<?php require 'menu.php';?>
+	
+	<div style="display: flex; margin-left: 270px;">
+		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Cliente" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarCliente()"> Cadastrar Cliente
+	</div>
+	
+	<div class="pesq" style="background-color: #fff; width: 100%">
+		
+		<table id="tblDataTable" class="display" style="width:100%">
+			<thead>
 			<TR>
 				<td>Razão social</td>
 				<td>CPF/CNPJ</td>
@@ -58,45 +49,35 @@ require 'Cliente.class.php';
 				<td>E-mail</td>
 				<td>Ações</td>
 			</TR>
+			</thead>
+			<tbody>
+
 			<?php
-			//$txtCnpj,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone
-			
+				$c= new Cliente;
+				
 				foreach($c->listarClientes() as $registroAtual){
 					echo "<tr>";
 
 					echo "<td>".$registroAtual['txtRazaoSocial']."</td>";
-					echo "<td>".$registroAtual['txtCnpj']."</td>";
+					echo "<td>".$registroAtual['txtCNPJ']."</td>";
 					echo "<td>".$registroAtual['txtInscricaoEstadual']."</td>";
 					echo "<td>".$registroAtual['txtEndereco']."</td>";
 					echo "<td>".$registroAtual['txtTelefone']."</td>";
 					echo "<td>".$registroAtual['txtContatoDireto']."</td>";
 					echo "<td>".$registroAtual['txtEmail']."</td>";
 					echo "<td>".
-					
-						"<input type='button' class='acoes' value='A' onclick='alterarCliente(".$registroAtual['idCliente'].")'>".
-						"<input type='button' class='acoes' value='E' onclick='excluirCliente(".$registroAtual['idCliente'].")'>".
+						
+						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Cliente' style='cursor: hand; width: 25px; height: 25px;' onclick='alterarCliente(".$registroAtual['idCliente'].")'>".
+						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Cliente' style='cursor: hand; width: 25px; height: 25px;' onclick='excluirCliente(".$registroAtual['idCliente'].")'>".
 					
 					"</td>";
 
 					echo "</tr>";
 				}
-
-			
-
 			?>
-				
-			</table>
-				
-		</div>
+			</tbody>	
+		</table>
+	</div>
 
-		<div class="consulta">
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
-	
 </body>
 </html>

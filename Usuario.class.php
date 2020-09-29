@@ -11,7 +11,7 @@
 
     public function login($txtEmail,$txtSenha){
         global $pdo;
-
+		
         $sql = "SELECT * FROM usuario WHERE txtEmail = :txtEmail AND txtSenha = :txtSenha";
         $sql = $pdo->prepare($sql);
         $sql->bindValue("txtEmail",$txtEmail);
@@ -104,9 +104,6 @@
         $sql->bindValue("txtEmail",$_SESSION['txtEmail']);
         $sql->bindValue("txtSenha",md5($txtSenha));
         $sql->execute();
-		
-		//echo $_SESSION['txtEmail'] . " " . $txtSenha . " " . md5($txtSenha) . " ";
-		//die("numLinhas: " . $sql->rowCount());
 		
         if($sql->rowCount() > 0){
 

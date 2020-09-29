@@ -92,8 +92,8 @@ h1{
 #cliente:target{
 	transform: translateX(250px);
 }
-input[type=text], input[type=password] {   
-    width: 100%;   
+input[type=text], input[type=password], input[type=email], input[type=date] {   
+    width: 300px;   
     margin: 8px 0;  
     padding: 12px 20px;   
     display: inline-block;   
@@ -117,12 +117,12 @@ input[type=button]:hover{
 }
 .cadastro{
 	display: flex;
-	justify-content: center;
-	margin-left: 250px;
+	width: 300px;
+	margin-left: 600px;
 	line-height: 20px;
 	font-size: 20px;
 	margin-top:  20px;
-	margin-left: 260px;
+	
 }
 .tit{
 	display: flex;

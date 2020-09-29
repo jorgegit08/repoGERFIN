@@ -21,9 +21,9 @@
             <div class="box1">
                 <h1>Bem Vindo</h1>
                 <form action="menuInicial.php" method="POST">
-                    <input type="text" placeholder="E-mail" name="email" id="email" required><br>
+                    <input type="text" placeholder="E-mail" name="txtEmail" id="txtEmail" required><br>
 
-                    <input type="password" placeholder="Senha" name="senha" id="senha" required> <br>
+                    <input type="password" placeholder="Senha" name="txtSenha" id="txtSenha" required> <br>
                     <input type="submit" value="Login" > <br>
 
                 </form>
