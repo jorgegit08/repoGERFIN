@@ -26,11 +26,11 @@
 				return false;
 			}	
 			
-			//Se a tabela tiver apenas uma linha não aplica o datatable
+			/*Se a tabela tiver apenas uma linha não aplica o datatable
 			if( $(tabela).find( "tr" ).length - qtdLinhasTitulo <= 1 ){
 				return false;
 			}
-			
+			*/
 			//Tabelas que possuem colspan para colocar uma linha acima da tabela precisam reduzir 1 a coluna para endereçar corretamente
 			var idColunaOrdenacao 	= 0;
 			var tipoOrdenacao 		= 'asc';

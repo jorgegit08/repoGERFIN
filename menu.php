@@ -21,8 +21,8 @@
 <nav class="menu" id="Contasapagar">
 	<ul>
 		<li><a href="" class="voltar">Voltar</a></li>
-		<li><a href="">Boletos</a></li>
-		<li><a href="">Prolabore</a></li>
+		<li><a href="consultarTipoPagamento.php">Tipos de pagamento</a></li>
+		<li><a href="consultarPagamento.php">Pagamentos</a></li>
 		<li><a href="">Salário</a></li>
 		<li><a href="">Bolsas</a></li>
 		<li><a href="">Distribuição de Lucros</a></li>
