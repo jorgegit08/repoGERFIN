@@ -14,7 +14,7 @@
         $sql->execute();
 
         if($sql->rowCount()=== 0){
-            $sql ="INSERT into tiporecebimento (txtDescricao) VALUES (:txtDescricao)";
+            $sql ="INSERT INTO tiporecebimento (txtDescricao) VALUES (:txtDescricao)";
             $sql =$pdo->prepare($sql);
             $sql->bindValue("txtDescricao",$txtDescricao);
             $sql->execute();

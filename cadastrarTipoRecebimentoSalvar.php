@@ -8,7 +8,6 @@ $tr = new TipoRecebimento();
 if(isset($_POST['txtDescricao']) && !empty($_POST['txtDescricao']) ){
 
         $txtDescricao = addslashes($_POST['txtDescricao']);
-        
 		
         $tr->cadastrarTipoRecebimento($txtDescricao);
 		
@@ -23,5 +22,5 @@ if(isset($_POST['txtDescricao']) && !empty($_POST['txtDescricao']) ){
             </script>";
         header("Location: consultarTipoRecebimento.php");
     }
-
+    
     ?>

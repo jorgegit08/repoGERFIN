@@ -16,13 +16,14 @@
 		<form method="post" action="cadastrarTipoRecebimentoSalvar.php"> 
 			
 			<p> 
-				<label for="tipoRecebimento">Tipo de recebimento:</label><br>
-				<input id="tipoRecebimento" name="tipoRecebimento" required="required" type="text" placeholder="Tipo de recebimento" />
+				<label for="txtDescricao">Tipo de recebimento:</label><br>
+				<input id="txtDescricao" name="txtDescricao" required="required" type="text" placeholder="Tipo de recebimento" />
 			</p>
 			  
 			<p> 
 				<input  type="submit" value="Cadastrar"/> 
 			</p>
+			
 		</form>
 	</div>
 	
