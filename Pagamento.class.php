@@ -8,6 +8,7 @@
     public $datVencimento="";	
     public $datPagamento="";	
     public $vlrValor="";
+    public $desctppagamento="";
 
     
 
@@ -19,9 +20,9 @@
             $sql =$pdo->prepare($sql);
             $sql->bindValue("idTipoPagamento",$idTipoPagamento);
             $sql->bindValue("txtDescricao",$txtDescricao);
-            $sql->bindValue("datVencimento",$datVencimento);
-            $sql->bindValue("datPagamento",$datPagamento);
-            $sql->bindValue("vlrValor",$vlrValor);
+            $sql->bindValue("datVencimento",implode('-', array_reverse(explode('/',$datVencimento))));
+            $sql->bindValue("datPagamento",implode('-', array_reverse(explode('/',$datPagamento))));
+            $sql->bindValue("vlrValor",str_replace(',','.', str_replace('.','', $vlrValor)));
             $sql->execute();
 
             return true;
@@ -36,16 +37,19 @@
         $sql->bindValue("idPagamento",$idPagamento);
         $sql->bindValue("idTipoPagamento",$idTipoPagamento);
         $sql->bindValue("txtDescricao",$txtDescricao);
-        $sql->bindValue("datVencimento",$datVencimento);
-        $sql->bindValue("datPagamento",$datPagamento);
-        $sql->bindValue("vlrValor",$vlrValor);
+        $sql->bindValue("datVencimento",implode('-', array_reverse(explode('/',$datVencimento))));
+        $sql->bindValue("datPagamento",implode('-', array_reverse(explode('/',$datPagamento))));
+        $sql->bindValue("vlrValor",str_replace(',','.', str_replace('.','', $vlrValor)));
         $sql->execute();
     }
 	
     public function consultarPagamento($idPagamento){
         global $pdo;
         
-        $sql = "SELECT idTipoPagamento,txtDescricao,datVencimento,datPagamento,vlrValor FROM pagamento WHERE idPagamento=:idPagamento";
+        $sql = "SELECT p.idTipoPagamento,p.txtDescricao,p.datVencimento,p.datPagamento,p.vlrValor,tp.txtDescricao AS desctppagamento ".
+            " FROM pagamento p".
+            " INNER JOIN tipoPagamento tp on tp.idTipoPagamento=p.idTipoPagamento".
+            " WHERE idPagamento=:idPagamento";
         $sql = $pdo->prepare($sql);
         $sql->bindValue("idPagamento",$idPagamento);
         $sql->execute();
@@ -58,7 +62,8 @@
             $this->txtDescricao = $dado['txtDescricao'];
             $this->datVencimento = $dado['datVencimento'];
             $this->datPagamento = $dado['datPagamento'];
-            $this->vlrValor = $dado['vlrValor'];
+            $this->vlrValor = str_replace('.',',',$dado['vlrValor']);
+            $this->desctppagamento = $dado['desctppagamento'];
             
 
             return true;        
@@ -71,7 +76,8 @@
         global $pdo;
 
 
-        $sql = "SELECT p.idPagamento,p.idTipoPagamento,p.txtDescricao,tp.txtDescricao AS desctppagamento,p.datVencimento,p.datPagamento,p.vlrValor ". 
+        $sql = "SELECT p.idPagamento,p.idTipoPagamento,p.txtDescricao,tp.txtDescricao AS desctppagamento,DATE_FORMAT(p.datVencimento, '%d/%m/%Y') as datVencimento,".
+                "DATE_FORMAT(p.datPagamento, '%d/%m/%Y') as datPagamento,format(p.vlrValor,2,'de_DE') as vlrValor ". 
                 "FROM pagamento p ". 
                 "INNER JOIN tipoPagamento tp on tp.idTipoPagamento=p.idTipoPagamento";
         $sql = $pdo->prepare($sql);

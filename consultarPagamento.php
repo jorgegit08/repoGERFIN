@@ -28,8 +28,9 @@ require 'assets/dataTable/dataTable.js';
 		
 	</script>	
 
-	<h1 class="tit">Pagamentos</h1>
+	<h1 class="tit">Recebimentos</h1>
 	<?php require 'menu.php';?>
+
 	
 	<div style="display: flex; margin-left: 270px;">
 		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Pagamento" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarPagamento()"> Cadastrar Pagamento

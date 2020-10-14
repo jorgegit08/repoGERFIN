@@ -33,8 +33,8 @@
 <nav class="menu" id="ContasaReceber">
 	<ul>
 		<li><a href="" class="voltar">Voltar</a></li>
-		<li><a href="">Honorários De Prolabore</a></li>
-		<li><a href="">Honorários de Êxito</a></li>
+		<li><a href="consultarTipoRecebimento.php">Tipos De recebimento</a></li>
+		<li><a href="consultarRecebimento.php">recebimento</a></li>
 	</ul>
 </nav>
 

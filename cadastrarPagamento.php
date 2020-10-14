@@ -15,19 +15,15 @@ require 'TipoPagamento.class.php';
 	
 	<?php require 'menu.php';?>
 		
-	<h1 class="tit">Alterar Pagamento</h1> 
-	<?php
-		$pg=new Pagamento;
-		$pg->consultarPagamento($_GET['idPagamento']);
-	?>
+	<h1 class="tit">Cadastrar Pagamento</h1> 
 		
 	<div class="cadastro">
 	
 		
-		<form method="post" action="alterarPagamentoSalvar.php"> 
+		<form method="post" action="cadastrarPagamentoSalvar.php"> 
 			<p> 
 				<label for="txtDescricao">Descrição:</label><br>
-				<input id="txtDescricao" name="txtDescricao" required="required" value="<?=$pg->txtDescricao?>" type="text" placeholder="Descrição" />
+				<input id="txtDescricao" name="txtDescricao" required="required"  type="text" placeholder="Descrição" />
 			</p>
 			<p> 
 			<label for="txtDescricao">Descrição:</label><br>
@@ -39,11 +35,6 @@ require 'TipoPagamento.class.php';
 				
 				foreach($tp->listarTiposPagamento() as $registroAtual){
 					
-					if($registroAtual['idTipoPagamento']==$_GET['idTipoPagamento']){
-						$selected = "selected";
-					}else{
-						$selected ="";
-					}
 					
 					echo "<option value=".$registroAtual['idTipoPagamento']. " ".$selected.">".$registroAtual['txtDescricao']."</option>";
 					
@@ -55,23 +46,19 @@ require 'TipoPagamento.class.php';
 			<p> 
 				<br>
 				<label for="datVencimento">Data Vencimento:</label><br>
-				<input id="datVencimento" name="datVencimento" required="required" type="date" value="<?=$pg->datVencimento?>" placeholder="01/01/2020"/> 
+				<input id="datVencimento" name="datVencimento" required="required" type="date"  placeholder="01/01/2020"/> 
 			</p>
 			<p> 
 				<label for="datPagamento">Data de pagamento:</label><br>
-				<input id="datPagamento" name="datPagamento" type="date" value="<?=$pg->datPagamento?>" placeholder="01/01/2020"/> 
+				<input id="datPagamento" name="datPagamento"  type="date"  placeholder="01/01/2020"/> 
 			</p>
 			<p> 
 				<label for="vlrValor">Valor:</label><br>
-				<input id="vlrValor" name="vlrValor" required="required" value="<?=$pg->vlrValor?>" type="text" placeholder="100"/>
-			</p>
-			
-			<p> 
-				<input id="idPagamento" name="idPagamento" type="hidden" value="<?=$_GET['idPagamento']?>"/>
+				<input id="vlrValor" name="vlrValor" required="required"  type="text" placeholder="100"/>
 			</p>
 
 			<p> 
-			  <input  type="submit" value="Alterar"/> 
+			  <input  type="submit" value="Cadastrar"/> 
 			</p>
 	</div>
 	
