@@ -126,4 +126,28 @@
             return false;
         }
     }
+    public function retornarValorLiquidoNFe($numNFe){
+        global $pdo;
+
+        /*$sql = "SELECT vlrLiquido from recebimento WHERE numNFe = :numNFe";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue("numNFe",$numNFe);
+        $sql->execute();
+        $dado = $sql->fetch(); 
+        
+        return  str_replace('.',',',$dado['vlrLiquido']);*/
+        $sql = "SELECT r.txtContrato,r.txtGestor,r.idCliente,r.idTipoRecebimento,r.txtDescricao,r.datVencimento,r.datPagamento,r.vlrBruto,r.vlrLiquido,tr.txtDescricao,r.numNFe,tr.txtDescricao as desctpRecebimento ".
+            " FROM recebimento r".
+            " INNER JOIN tipoRecebimento tr on tr.idTipoRecebimento=r.idTipoRecebimento".
+            " WHERE r.idRecebimento=:idRecebimento";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue("idRecebimento",2);
+        $sql->execute();
+
+        if($sql->rowCount() >0){
+            return true;
+    }else{
+        return false;
+    }
+}
 }

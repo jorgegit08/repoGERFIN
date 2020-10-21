@@ -39,5 +39,6 @@ if( isset($_POST['txtEmail']) && !empty($_POST['txtEmail']) && isset($_POST['txt
 
 <body>      
 	<?php require 'menu.php';?>
+	
 </body>
 </html>

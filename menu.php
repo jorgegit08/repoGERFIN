@@ -23,9 +23,9 @@
 		<li><a href="" class="voltar">Voltar</a></li>
 		<li><a href="consultarTipoPagamento.php">Tipos de pagamento</a></li>
 		<li><a href="consultarPagamento.php">Pagamentos</a></li>
+		<li><a href="distribuicaoDeLucros.php">Distribuições de Lucro</a></li>
 		<li><a href="">Salário</a></li>
 		<li><a href="">Bolsas</a></li>
-		<li><a href="">Distribuição de Lucros</a></li>
 	</ul>
 </nav>
 
@@ -35,6 +35,7 @@
 		<li><a href="" class="voltar">Voltar</a></li>
 		<li><a href="consultarTipoRecebimento.php">Tipos De recebimento</a></li>
 		<li><a href="consultarRecebimento.php">recebimento</a></li>
+		
 	</ul>
 </nav>
 
@@ -42,7 +43,7 @@
 	<ul>
 		<li><a href="" class="voltar">Voltar</a></li>
 		<li><a href="">Gastos Mensais</a></li>
-		<li><a href="">Distribuições de Lucro</a></li>
 		<li><a href="">Notas Fiscais</a></li>
+		<li><a href="">Distribuição de Lucros</a></li>
 	</ul>
 </nav>

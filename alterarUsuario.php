@@ -74,6 +74,15 @@ require 'Usuario.class.php';
                   <input  type="submit" value="Alterar"/>
                   <input  type="button" value="Excluir" onclick="excluirConta()" />
                 </p>
+                <label for="browser">Selecione o cliente:</label>
+    <input list="browsers" name="browser" id="browser">
+  <datalist id="browsers">
+    <option value="1"> carlos </option>
+    <option value="manuel">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
 </div>
 </body>
 </html>
