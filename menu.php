@@ -12,7 +12,7 @@
 		
 <nav class="menu" id="cliente">
 	<ul>
-		<li><a href="" class="voltar">Voltar</a></li>
+		<li><a href="menuInicial.php" class="voltar">Voltar</a></li>
 		<li><a href="">Novo</a></li>
 		<li><a href="consultarCliente.php">Consulta</a></li>
 	</ul>
@@ -20,10 +20,11 @@
 
 <nav class="menu" id="Contasapagar">
 	<ul>
-		<li><a href="" class="voltar">Voltar</a></li>
+		<li><a href="menuInicial.php" class="voltar">Voltar</a></li>
 		<li><a href="consultarTipoPagamento.php">Tipos de pagamento</a></li>
 		<li><a href="consultarPagamento.php">Pagamentos</a></li>
 		<li><a href="distribuicaoDeLucros.php">Distribuições de Lucro</a></li>
+		<li><a href="consultarFavorecido.php">Favorecidos</a></li>
 		<li><a href="">Salário</a></li>
 		<li><a href="">Bolsas</a></li>
 	</ul>
@@ -32,7 +33,7 @@
 
 <nav class="menu" id="ContasaReceber">
 	<ul>
-		<li><a href="" class="voltar">Voltar</a></li>
+		<li><a href="menuInicial.php" class="voltar">Voltar</a></li>
 		<li><a href="consultarTipoRecebimento.php">Tipos De recebimento</a></li>
 		<li><a href="consultarRecebimento.php">recebimento</a></li>
 		
@@ -41,7 +42,7 @@
 
 <nav class="menu" id="Relatorios">
 	<ul>
-		<li><a href="" class="voltar">Voltar</a></li>
+		<li><a href="menuInicial.php" class="voltar">Voltar</a></li>
 		<li><a href="">Gastos Mensais</a></li>
 		<li><a href="">Notas Fiscais</a></li>
 		<li><a href="">Distribuição de Lucros</a></li>

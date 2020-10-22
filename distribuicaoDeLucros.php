@@ -14,25 +14,32 @@ require 'assets/dataTable/dataTable.js';
 <body>
 	
 	<script language="javascript">
-		function alterarCliente(idCliente){
-			window.location.href='alterarCliente.php?idCliente='+idCliente;
-		}
-
-		function excluirCliente(idCliente){
-			window.location.href='excluirCliente.php?idCliente='+idCliente;
-		}
-		
-		function cadastrarCliente(){
-			window.location.href='cadastrarCliente.php';
-		}
-		
+        $(document).ready(function(){
+			
+			$("#numNFe").on( 'blur', function(){
+			
+			
+				$.ajax({
+					type:'GET',
+					url:'retornarVlrLiquidoNFeAjax.php?numNFe=' + $('#numNFe').val(),
+					dataType: 'html',
+					cache: false,
+					contentType: "text/html;charset=utf-8",
+					scriptCharset: "utf-8",
+					success:function(resultadoAjax){
+						$('#vlrLiquido').val( resultadoAjax );
+					}
+				});
+			});
+		});
 	</script>	
 
 	<h1 class="tit">Clientes</h1>
 	<?php require 'menu.php';?>
 	
 	<div style="display: flex; margin-left: 270px;">
-		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Cliente" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarCliente()"> Cadastrar Cliente
+		<input type="text" id='numNFe' name='numNFe' placeholder='numNFe' >
+        <input type="text" id='vlrLiquido' name='vlrLiquido' placeholder='Valor Liquido' >
 	</div>
 	
 	<div class="pesq" style="background-color: #fff; width: 100%">
