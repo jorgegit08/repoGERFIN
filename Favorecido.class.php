@@ -82,7 +82,7 @@
         }
 
     }
-    public function listarFavorecido(){
+    public function listarFavorecidos(){
         global $pdo;
 
 

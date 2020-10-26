@@ -129,13 +129,15 @@
     public function retornarValorLiquidoNFe($numNFe){
         global $pdo;
 
-        $sql = "SELECT vlrLiquido from recebimento WHERE numNFe = :numNFe";
+        $sql = "SELECT vlrLiquido FROM recebimento WHERE numNFe = :numNFe";
         $sql = $pdo->prepare($sql);
         $sql->bindValue("numNFe",$numNFe);
         $sql->execute();
         $dado = $sql->fetch(); 
         
-        return  $dado;
+        
+        //return  str_replace('.',',',$dado['vlrLiquido']);
+        return 700;
        
     }
 }

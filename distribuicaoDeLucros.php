@@ -1,6 +1,7 @@
 <?php
 require 'conexaoDB.php';
 require 'Cliente.class.php';
+require 'Favorecido.class.php';
 require 'assets/dataTable/dataTable.js';
 ?>
 
@@ -28,13 +29,26 @@ require 'assets/dataTable/dataTable.js';
 					scriptCharset: "utf-8",
 					success:function(resultadoAjax){
 						$('#vlrLiquido').val( resultadoAjax );
+						alert(resultadoAjax);
 					}
 				});
 			});
+			
 		});
+		function calculaPercent(idFavorecido){
+				if($("#vlrLiquido").val() == "" || $("#vlrLiquido").val() == 0){
+					alert('Valor liquido da NFe não foi preenchido!')
+					
+					return false;
+				};
+
+				
+				eval('document.getElementById("vlrPercent"+idFavorecido).value = document.getElementById("percent"+idFavorecido).value / 100 * document.getElementById("vlrLiquido").value'); 
+			};
+		
 	</script>	
 
-	<h1 class="tit">Clientes</h1>
+	<h1 class="tit">Distribuição de lucros</h1>
 	<?php require 'menu.php';?>
 	
 	<div style="display: flex; margin-left: 270px;">
@@ -44,46 +58,38 @@ require 'assets/dataTable/dataTable.js';
 	
 	<div class="pesq" style="background-color: #fff; width: 100%">
 		
-		<table id="tblDataTable" class="display" style="width:100%">
-			<thead>
-			<TR>
-				<td>Razão social</td>
-				<td>CPF/CNPJ</td>
-				<td>Inscrição</td>
-				<td>endereço</td>
-				<td>Telefone</td>
-				<td>Responsável</td>
-				<td>E-mail</td>
-				<td>Ações</td>
-			</TR>
-			</thead>
-			<tbody>
+		<form action="distribuicaoDeLucrosSalvar.php">
+			<table id="tblDataTable" class="display" style="width:100%">
+				<thead>
+				<TR>
+					<td>Favorecido</td>
+					<td>Porcentagem</td>
+					<td>Valor</td>
+					<td>Data</td>
+					<td>Comprovante</td>
+				</TR>
+				</thead>
+				<tbody>
 
-			<?php
-				$c= new Cliente;
-				
-				foreach($c->listarClientes() as $registroAtual){
-					echo "<tr>";
+				<?php
+					$f= new Favorecido;
 
-					echo "<td>".$registroAtual['txtRazaoSocial']."</td>";
-					echo "<td>".$registroAtual['txtCNPJ']."</td>";
-					echo "<td>".$registroAtual['txtInscricaoEstadual']."</td>";
-					echo "<td>".$registroAtual['txtEndereco']."</td>";
-					echo "<td>".$registroAtual['txtTelefone']."</td>";
-					echo "<td>".$registroAtual['txtContatoDireto']."</td>";
-					echo "<td>".$registroAtual['txtEmail']."</td>";
-					echo "<td>".
-						
-						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Cliente' style='cursor: hand; width: 25px; height: 25px;' onclick='alterarCliente(".$registroAtual['idCliente'].")'>".
-						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Cliente' style='cursor: hand; width: 25px; height: 25px;' onclick='excluirCliente(".$registroAtual['idCliente'].")'>".
 					
-					"</td>";
+					foreach($f->listarFavorecidos() as $registroAtual){
+						echo "<tr>";
 
-					echo "</tr>";
-				}
-			?>
-			</tbody>	
-		</table>
+						echo "<td>".$registroAtual['txtNome']." <input type='hidden' name='txtNome' value='".$registroAtual['txtNome']."'></td>";
+						echo "<td> <input type='number' name='percent' id='percent".$registroAtual['idFavorecido']."' placeholder='0%' onblur='calculaPercent(".$registroAtual['idFavorecido'].")'> </td>";
+						echo "<td> <input type='number' name='vlrPercent' id='vlrPercent".$registroAtual['idFavorecido']."' placeholder='100,00'> </td>";
+						echo "<td> <input type='date' name='data' id='data".$registroAtual['idFavorecido']."'> </td>";
+						echo "<td> <input type='file' name='comprovante' id='comprovante".$registroAtual['idFavorecido']."'> </td>";
+
+						echo "</tr>";
+					}
+				?>
+				</tbody>	
+			</table>
+		</form>
 	</div>
 
 </body>
