@@ -29,7 +29,7 @@ require 'assets/dataTable/dataTable.js';
 					scriptCharset: "utf-8",
 					success:function(resultadoAjax){
 						$('#vlrLiquido').val( resultadoAjax );
-						alert(resultadoAjax);
+						
 					}
 				});
 			});

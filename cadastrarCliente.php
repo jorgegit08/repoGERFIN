@@ -29,7 +29,7 @@
 			</p>
 			<p> 
 				<label for="txtEndereco">endereço:</label><br>
-				<input id="txtEndereco" name="txtEndereco" required="required" type="text" placeholder="contato@htmlecsspro.com"/> 
+				<input id="txtEndereco" name="txtEndereco" required="required" type="text" placeholder="centro rua 21"/> 
 			</p>
 			 
 			<p> 

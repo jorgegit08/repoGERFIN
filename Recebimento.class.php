@@ -136,8 +136,8 @@
         $dado = $sql->fetch(); 
         
         
-        //return  str_replace('.',',',$dado['vlrLiquido']);
-        return 700;
+        return  str_replace('.',',',$dado['vlrLiquido']);
+       
        
     }
 }

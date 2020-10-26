@@ -55,7 +55,7 @@ require 'assets/dataTable/dataTable.js';
 			<?php
 				$f= new Favorecido;
 				
-				foreach($f->listarFavorecido() as $registroAtual){
+				foreach($f->listarFavorecidos() as $registroAtual){
 					echo "<tr>";
 
 					echo "<td>".$registroAtual['txtNome']."</td>";
