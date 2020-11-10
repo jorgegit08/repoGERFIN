@@ -8,7 +8,7 @@ require 'assets/dataTable/dataTable.js';
 <html lang="pt-br">
 <head>
 	<link href="css/style.css" rel="stylesheet">
-	<title>Menu</title>
+	<title>Gerfin</title>
 </head>
 
 <body>

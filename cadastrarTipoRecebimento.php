@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<link href="assets/css/style.css" rel="stylesheet">
-	<title>Menu</title>
+	<link href="css/style.css" rel="stylesheet">
+	<title>Gerfin</title>
 </head>
 
 <body>

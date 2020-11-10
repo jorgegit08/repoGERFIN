@@ -8,7 +8,8 @@ require 'assets/dataTable/dataTable.js';
 <html lang="pt-br">
 <head>
 	<link href="css/style.css" rel="stylesheet">
-	<title>Menu</title>
+	<title>Gerfin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
@@ -28,7 +29,7 @@ require 'assets/dataTable/dataTable.js';
 		
 	</script>	
 
-	<h1 class="tit">Recebimentos</h1>
+	<h1 class="tit">Pagamentos</h1>
 	<?php require 'menu.php';?>
 
 	
@@ -57,8 +58,8 @@ require 'assets/dataTable/dataTable.js';
 				foreach($pg->listarPagamentos() as $registroAtual){
 					echo "<tr>";
 
-					echo "<td>".$registroAtual['txtDescricao']."</td>";
-					echo "<td>".$registroAtual['desctppagamento']."</td>";
+					echo "<td>".utf8_encode($registroAtual['txtDescricao'])."</td>";
+					echo "<td>".utf8_encode($registroAtual['desctppagamento'])."</td>";
 					echo "<td>".$registroAtual['datVencimento']."</td>";
 					echo "<td>".$registroAtual['datPagamento']."</td>";
 					echo "<td>".$registroAtual['vlrValor']."</td>";

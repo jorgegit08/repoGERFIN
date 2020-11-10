@@ -14,7 +14,7 @@ if(isset($_POST['idPagamento']) && !empty($_POST['idPagamento'])) {
 
         $idPagamento = addslashes($_POST['idPagamento']);
 
-        $pg->excluirPagamento($idPagamento,$idTipoPagamento,$txtDescricao,$datVencimento,$datPagamento,$vlrValor);
+        $pg->excluirPagamento($idPagamento);
 
         echo"<script language='javascript' type='text/javascript'>
                 alert('Dados do pagamento excluídos!');

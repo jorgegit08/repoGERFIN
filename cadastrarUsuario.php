@@ -8,7 +8,7 @@ require 'Usuario.class.php';
 <html lang="pt-br">
 <head>
         <link href="css/style.css" rel="stylesheet">
-        <title>Menu</title>
+        <title>Gerfin</title>
 </head>
 <body>
 <h1 class="tit">Cadastrar Usuário</h1>

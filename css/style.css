@@ -63,8 +63,8 @@ h1{
 	border-left: solid 5px #444;
 }
 
-#Contasapagar,
-#ContasaReceber{
+#pagamentos,
+#recebimentos{
 	width: 250px;
 	left: -250px;
 }
@@ -80,8 +80,8 @@ h1{
 }
 
 
-#Contasapagar:target,
-#ContasaReceber:target{
+#pagamentos:target,
+#recebimentos:target{
 	transform: translateX(250px);
 }
 #Relatorios:target,
@@ -92,13 +92,14 @@ h1{
 #cliente:target{
 	transform: translateX(250px);
 }
-input[type=text], input[type=password], input[type=email], input[type=date] {   
+input[type=text], input[type=password], input[type=email], input[type=date],input[type=number] {   
     width: 300px;   
     margin: 8px 0;  
     padding: 12px 20px;   
     display: inline-block;   
     border: 2px solid rgb(75, 136, 172);   
-    box-sizing: border-box; 
+	box-sizing: border-box; 
+	border-radius: 10px;
 }
 
 input[type=submit], input[type=button]{
@@ -190,3 +191,6 @@ th{
 	width: 5px;
 	font-weight: bold;
 }
+
+
+

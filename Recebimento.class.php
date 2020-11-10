@@ -138,6 +138,5 @@
         
         return  str_replace('.',',',$dado['vlrLiquido']);
        
-       
     }
 }

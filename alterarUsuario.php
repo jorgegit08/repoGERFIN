@@ -8,7 +8,7 @@ require 'Usuario.class.php';
 <html lang="pt-br">
 <head>
         <link href="css/style.css" rel="stylesheet">
-        <title>Menu</title>
+        <title>Gerfin</title>
 </head>
 <body>
 
@@ -74,8 +74,6 @@ require 'Usuario.class.php';
                   <input  type="submit" value="Alterar"/>
                   <input  type="button" value="Excluir" onclick="excluirConta()" />
                 </p>
-                
-    
 </div>
 </body>
 </html>

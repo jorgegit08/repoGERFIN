@@ -62,8 +62,8 @@ h1{
 	border-left: solid 5px #444;
 }
 
-#Contasapagar,
-#ContasaReceber{
+#pagamentos,
+#recebimentos{
 	width: 250px;
 	left: -250px;
 }
@@ -79,8 +79,8 @@ h1{
 }
 
 
-#Contasapagar:target,
-#ContasaReceber:target{
+#pagamentos:target,
+#recebimentos:target{
 	transform: translateX(250px);
 }
 #Relatorios:target,

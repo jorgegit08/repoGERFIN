@@ -25,7 +25,7 @@
             $sql->bindValue("vlrValor",str_replace(',','.', str_replace('.','', $vlrValor)));
             $sql->execute();
 
-            return true;
+            return $pdo->lastInsertId();
     }
 
     public function alterarPagamento($idPagamento,$idTipoPagamento,$txtDescricao,$datVencimento,$datPagamento,$vlrValor){

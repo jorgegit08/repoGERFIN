@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<link href="assets/css/style.css" rel="stylesheet">
-	<title>Menu</title>
+	<link href="css/style.css" rel="stylesheet">
+	<title>Gerfin</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 			</p>
 			<p> 
 				<label for="txtEndereco">endereço:</label><br>
-				<input id="txtEndereco" name="txtEndereco" required="required" type="text" placeholder="centro rua 21"/> 
+				<input id="txtEndereco" name="txtEndereco" required="required" type="text" placeholder="contato@htmlecsspro.com"/> 
 			</p>
 			 
 			<p> 

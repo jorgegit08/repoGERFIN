@@ -13,9 +13,9 @@ if( isset($_POST['txtEmail']) && !empty($_POST['txtEmail']) && isset($_POST['txt
 	if($u->login($txtEmail,$txtSenha) == true){
 
 		if( isset($_SESSION['txtEmail'])){
-				header("Location menuInicial.php");
+			header("Location menuInicial.php");
 		}else{
-				header("Location: index.php");
+			header("Location: index.php");
 		}
 	}else{
 		echo"<script language='javascript' type='text/javascript'>
@@ -34,7 +34,7 @@ if( isset($_POST['txtEmail']) && !empty($_POST['txtEmail']) && isset($_POST['txt
 <html lang="pt-br">
 <head>
 	<link href="css/style.css" rel="stylesheet">
-	<title>Menu</title>
+	<title>Gerfin</title>
 </head>
 
 <body>      
