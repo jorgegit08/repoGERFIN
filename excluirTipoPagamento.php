@@ -7,6 +7,7 @@ require 'conexaoDB.php';
 <html lang="pt-br">
 <head>
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/styleEdicao.css" rel="stylesheet">
 	<title>Gerfin</title>
 </head>
 
@@ -19,21 +20,24 @@ require 'conexaoDB.php';
 		$tp=new TipoPagamento;
 		$tp->consultarTipoPagamento($_GET['idTipoPagamento']);
 	?>
+	
+	<form method="post" action="excluirTipoPagamentoSalvar.php"> 
 		
-	<div class="cadastro">
+		<div class="pesq pesqFiltro tamanho400  altura100percent borda">
+			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados do tipo de pagamento</h2> 
 		
-		<form method="post" action="excluirTipoPagamentoSalvar.php"> 
-			<p> 
+			<div> 
 				<label for="txtDescricao">Descrição do tipo de pagamento:</label><br>
 				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=$tp->txtDescricao?>" type="text" placeholder="Descrição" />
 				<input type="hidden" name="idTipoPagamento" value="<?=$_GET['idTipoPagamento']?>">
-			</p>
+			</div>
 			
+			<div class="margemCima30"> 
+				<input type="submit" id="btnExcluir" class="botaoCadastro" value="Excluir"/> 
+			</div>
+		</div>
 
-			<p> 
-			  <input  type="submit" value="Excluir"/> 
-			</p>
-	</div>
+	</form>
 	
 </body>
 </html>

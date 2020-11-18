@@ -2,8 +2,6 @@
 
  class Favorecido{
 
-    
-
     public $idFavorecido="";
     public $txtNome="";
     public $txtCPF="";
@@ -15,13 +13,35 @@
 		
     public function cadastrarFavorecido($txtNome,$txtCPF,$datNascimento,$txtEmail,$txtOAB,$txtEndereco,$txtTelefone){
         global $pdo;
-		
-        $sql = "SELECT * FROM favorecido WHERE txtCPF=:txtCPF";
-        $sql = $pdo->prepare($sql);
-        $sql->bindValue("txtCPF",$txtCPF);
-        $sql->execute();
 
-        if($sql->rowCount()=== 0){
+            if( empty($txtCPF) ){
+                $txtCPF = null;  
+            }
+
+            echo $datNascimento;
+
+            if( empty($datNascimento) ){
+                $datNascimento = null;  
+            }else{
+                $datNascimento = implode('-', array_reverse(explode('/',$datPagamento)));
+            }
+
+            if( empty($txtEmail) ){
+                $txtEmail = null;  
+            }
+
+            if( empty($txtOAB) ){
+                $txtOAB = null;  
+            }
+
+            if( empty($txtEndereco) ){
+                $txtEndereco = null;  
+            }
+
+            if( empty($txtTelefone) ){
+                $txtTelefone = null;  
+            }
+      
             $sql ="INSERT into favorecido (txtNome,txtCPF,datNascimento,txtEmail,txtOAB,txtEndereco,txtTelefone) VALUES (:txtNome,:txtCPF,:datNascimento,:txtEmail,:txtOAB,:txtEndereco,:txtTelefone)";
             $sql =$pdo->prepare($sql);
             $sql->bindValue("txtNome",$txtNome);
@@ -31,18 +51,41 @@
             $sql->bindValue("txtOAB",$txtOAB);
             $sql->bindValue("txtEndereco",$txtEndereco);
             $sql->bindValue("txtTelefone",$txtTelefone);
-            $sql->execute();
-          
+            $sql->execute(); 
 
-            return true;
-        }else{
-            return false;
-        }
     }
     public function alterarFavorecido($idFavorecido,$txtNome,$txtCPF,$datNascimento,$txtEmail,$txtOAB,$txtEndereco,$txtTelefone){
         global $pdo;
         
-		$this->consultarFavorecido($idFavorecido);
+        $this->consultarFavorecido($idFavorecido);
+        
+        if( empty($txtCPF) ){
+            $txtCPF = null;  
+        }
+
+        echo $datNascimento;
+
+        if( empty($datNascimento) ){
+            $datNascimento = null;  
+        }else{
+            $datNascimento = implode('-', array_reverse(explode('/',$datPagamento)));
+        }
+
+        if( empty($txtEmail) ){
+            $txtEmail = null;  
+        }
+
+        if( empty($txtOAB) ){
+            $txtOAB = null;  
+        }
+
+        if( empty($txtEndereco) ){
+            $txtEndereco = null;  
+        }
+
+        if( empty($txtTelefone) ){
+            $txtTelefone = null;  
+        }
 
         $sql ="UPDATE favorecido SET txtNome=:txtNome,txtCPF=:txtCPF,datNascimento=:datNascimento,txtEmail=:txtEmail,txtOAB=:txtOAB,txtEndereco=:txtEndereco,txtTelefone=:txtTelefone WHERE idFavorecido=:idFavorecido";
         $sql =$pdo->prepare($sql);

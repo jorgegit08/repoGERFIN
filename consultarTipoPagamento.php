@@ -31,10 +31,10 @@ require 'assets/dataTable/dataTable.js';
 	<h1 class="tit">Tipos de Pagamento</h1>
 	<?php require 'menu.php';?>
 	
-	<div style="display: flex; margin-left: 270px;">
-		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Tipo de pagamento" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarTipoPagamento()"> Cadastrar tipo de pagamento
+	<div class="divBotaoCadastro">
+		<button class="botaoCadastro" title="Cadastrar Tipo de pagamento" onclick="cadastrarTipoPagamento()"><img src="assets/Icons/greenPlus.png" id="imgCadastro"> Cadastrar tipo de pagamento</button>
 	</div>
-	
+		
 	<div class="pesq" style="background-color: #fff; width: 100%">
 		
 		<table id="tblDataTable" class="display" style="width:100%">
@@ -57,8 +57,8 @@ require 'assets/dataTable/dataTable.js';
 					echo "<td>".$registroAtual['txtDescricao']."</td>";
 					echo "<td>".
 						
-						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Tipo de pagamento' style='cursor: hand; width: 25px; height: 25px;' onclick='alterarTipoPagamento(".$registroAtual['idTipoPagamento'].")'>".
-						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Tipo de pagamento' style='cursor: hand; width: 25px; height: 25px;' onclick='excluirTipoPagamento(".$registroAtual['idTipoPagamento'].")'>".
+						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Tipo de pagamento' id='btnAlterar' onclick='alterarTipoPagamento(".$registroAtual['idTipoPagamento'].")'>".
+						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Tipo de pagamento' id='btnExcluir' onclick='excluirTipoPagamento(".$registroAtual['idTipoPagamento'].")'>".
 					
 					"</td>";
 

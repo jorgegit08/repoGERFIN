@@ -8,12 +8,9 @@ $pg = new Pagamento();
 $idPagamento = $_POST['idPagamento'];
 $idTipoPagamento = $_POST['idTipoPagamento'];
 
-//$txtCnpj,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone
-
 if(isset($_POST['idPagamento']) && !empty($_POST['idPagamento'])
     &&    isset($_POST['txtDescricao']) && !empty($_POST['txtDescricao'])
     &&    isset($_POST['datVencimento']) && !empty($_POST['datVencimento'])
-    &&    isset($_POST['datPagamento']) && !empty($_POST['datPagamento'])
     &&    isset($_POST['vlrValor']) && !empty($_POST['vlrValor'])   ){
 
         $idPagamento = addslashes($_POST['idPagamento']);

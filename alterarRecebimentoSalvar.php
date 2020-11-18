@@ -15,7 +15,7 @@ if(isset($_POST['idTipoRecebimento']) && !empty($_POST['idTipoRecebimento'])
     &&    isset($_POST['vlrBruto']) && !empty($_POST['vlrBruto'])
     &&    isset($_POST['vlrLiquido']) && !empty($_POST['vlrLiquido'])
     &&    isset($_POST['datVencimento']) && !empty($_POST['datVencimento'])
-    &&    isset($_POST['datPagamento']) && !empty($_POST['datPagamento'])
+    &&    isset($_POST['datEmissao']) && !empty($_POST['datEmissao'])
     &&    isset($_POST['numNFe']) && !empty($_POST['numNFe'])   ){
 
         $idTipoRecebimento = addslashes($_POST['idTipoRecebimento']);
@@ -28,8 +28,10 @@ if(isset($_POST['idTipoRecebimento']) && !empty($_POST['idTipoRecebimento'])
         $datVencimento = addslashes($_POST['datVencimento']);
         $datPagamento = addslashes($_POST['datPagamento']);
         $numNFe = addslashes($_POST['numNFe']);
+        $indCancelado = addslashes($_POST['indCancelado']);
+        $datEmissao = addslashes($_POST['datEmissao']);
 
-        $r->alterarRecebimento($idRecebimento,$idCliente,$txtContrato,$txtGestor,$idTipoRecebimento,$txtDescricao,$vlrBruto,$vlrLiquido,$datVencimento,$datPagamento,$numNFe);
+        $r->alterarRecebimento($idRecebimento,$idCliente,$txtContrato,$txtGestor,$idTipoRecebimento,$txtDescricao,$vlrBruto,$vlrLiquido,$datVencimento,$datPagamento,$numNFe,$indCancelado,$datEmissao);
        
         echo"<script language='javascript' type='text/javascript'>
                 alert('Dados do Recebimento alterados!');

@@ -26,18 +26,57 @@ require 'assets/dataTable/dataTable.js';
 		function cadastrarPagamento(){
 			window.location.href='cadastrarPagamento.php';
 		}
+
+		function filtrarDadosPagamento(){
+			
+			dataInicial = document.getElementById("datInicial").value;
+			datFinal = document.getElementById("datFinal").value;
+
+			if( datFinal < dataInicial){
+				alert("A data Final não ser inferior a inicial")
+				return false;
+			}else{
+				document.getElementById("filtroPagamento").submit();
+			}
+			
+		}
 		
 	</script>	
 
 	<h1 class="tit">Pagamentos</h1>
-	<?php require 'menu.php';?>
+	<?php require 'menu.php';
 
+		if( isset($_POST['datInicial']) && !empty($_POST['datInicial']) && $_POST['datFinal'] && !empty($_POST['datFinal']) ){
+			$dataInicial = $_POST['datInicial'];
+			$dataFinal = $_POST['datFinal'];
+		}else{
+			$dataInicial = date("Y-m-01");
+			$dataFinal = date("Y-m-d");
+		}
+
+	?>
 	
-	<div style="display: flex; margin-left: 270px;">
-		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Pagamento" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarPagamento()"> Cadastrar Pagamento
+	<form id="filtroPagamento" name="filtroPagamento" method="POST" action="">
+		<div class="pesq margemBaixo30 pesqFiltro altura200 borda tamanho800" align="center">
+			<h2 class="margemBaixo30">Selecione o período dos pagamentos</h2>
+
+			<label for="datInicial" class="alinhaLabel">Data Inicial:</label>
+			<input id="datInicial" name="datInicial" required="required" type="date" value="<?=$dataInicial?>" />
+			
+			<label for="datFinal" class="alinhaLabel">Data Final:</label>
+			<input id="datFinal" name="datFinal" required="required" type="date" value="<?=$dataFinal?>" />
+			
+			<div class="altura40">
+				<button class="botaoCadastro" style="float: none" title="Buscar" onclick="filtrarDadosPagamento()">Buscar</button>
+			</div>
+		</div>
+	</form>
+
+	<div class="divBotaoCadastro">
+		<button class="botaoCadastro" title="Cadastrar Pagamento" onclick="cadastrarPagamento()"><img src="assets/Icons/greenPlus.png" id="imgCadastro"> Cadastrar Pagamento</button>
 	</div>
 	
-	<div class="pesq" style="background-color: #fff; width: 100%">
+	<div class="pesq pesqTabela">
 		
 		<table id="tblDataTable" class="display" style="width:100%">
 			<thead>
@@ -54,8 +93,8 @@ require 'assets/dataTable/dataTable.js';
 
 			<?php
 				$pg= new Pagamento;
-				//idPagamento	idTipoPagamento	txtDescricao	datVencimento	datPagamento	vlrValor
-				foreach($pg->listarPagamentos() as $registroAtual){
+
+				foreach($pg->listarPagamentosPorPeriodo($dataInicial,$dataFinal) as $registroAtual){
 					echo "<tr>";
 
 					echo "<td>".utf8_encode($registroAtual['txtDescricao'])."</td>";
@@ -65,8 +104,8 @@ require 'assets/dataTable/dataTable.js';
 					echo "<td>".$registroAtual['vlrValor']."</td>";
 					echo "<td>".
 						
-						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Pagamento' style='cursor: hand; width: 25px; height: 25px;' onclick='alterarPagamento(".$registroAtual['idPagamento'].",".$registroAtual['idTipoPagamento'].")'>".
-						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Pagamento' style='cursor: hand; width: 25px; height: 25px;' onclick='excluirPagamento(".$registroAtual['idPagamento'].",".$registroAtual['idTipoPagamento'].")'>".
+						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Pagamento' id='btnAlterar' onclick='alterarPagamento(".$registroAtual['idPagamento'].",".$registroAtual['idTipoPagamento'].")'>".
+						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Pagamento' id='btnExcluir' onclick='excluirPagamento(".$registroAtual['idPagamento'].",".$registroAtual['idTipoPagamento'].")'>".
 					
 					"</td>";
 

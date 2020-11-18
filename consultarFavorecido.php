@@ -31,11 +31,11 @@ require 'assets/dataTable/dataTable.js';
 	<h1 class="tit">Favorecidos</h1>
 	<?php require 'menu.php';?>
 	
-	<div style="display: flex; margin-left: 270px;">
-		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Favorecido" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarFavorecido()"> Cadastrar Favorecido
+	<div class="divBotaoCadastro">
+		<button class="botaoCadastro" title="Cadastrar Favorecido" onclick="cadastrarFavorecido()"><img src="assets/Icons/greenPlus.png" id="imgCadastro"> Cadastrar Favorecido</button>
 	</div>
-	
-	<div class="pesq" style="background-color: #fff; width: 100%">
+
+	<div class="pesq pesqTabela">
 		
 		<table id="tblDataTable" class="display" style="width:100%">
 			<thead>
@@ -67,8 +67,8 @@ require 'assets/dataTable/dataTable.js';
 					echo "<td>".$registroAtual['txtTelefone']."</td>";
 					echo "<td>".
 						
-						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Favorecido' style='cursor: hand; width: 25px; height: 25px;' onclick='alterarFavorecido(".$registroAtual['idFavorecido'].")'>".
-						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Favorecido' style='cursor: hand; width: 25px; height: 25px;' onclick='excluirFavorecido(".$registroAtual['idFavorecido'].")'>".
+						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Favorecido' id='btnAlterar' onclick='alterarFavorecido(".$registroAtual['idFavorecido'].")'>".
+						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Favorecido' id='btnExcluir' onclick='excluirFavorecido(".$registroAtual['idFavorecido'].")'>".
 					
 					"</td>";
 

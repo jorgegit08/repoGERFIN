@@ -5,15 +5,8 @@ require 'conexaoDB.php';
 
 $f = new Favorecido();
 $idFavorecido = $_POST['idFavorecido'];
-//$txtCnpj,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone
 
-if(isset($_POST['txtNome']) && !empty($_POST['txtNome'])
-    &&    isset($_POST['txtCPF']) && !empty($_POST['txtCPF'])
-    &&    isset($_POST['datNascimento']) && !empty($_POST['datNascimento'])
-    &&    isset($_POST['txtEmail']) && !empty($_POST['txtEmail'])
-    &&    isset($_POST['txtOAB']) && !empty($_POST['txtOAB'])
-    &&    isset($_POST['txtEndereco']) && !empty($_POST['txtEndereco'])
-    &&    isset($_POST['txtTelefone']) && !empty($_POST['txtTelefone'])   ){
+if(isset($_POST['txtNome']) && !empty($_POST['txtNome']) ){
 
         $txtNome = addslashes($_POST['txtNome']);
         $txtCPF = addslashes($_POST['txtCPF']);

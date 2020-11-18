@@ -11,9 +11,9 @@ if( isset($_POST['txtEmail']) && !empty($_POST['txtEmail']) && isset($_POST['txt
 	$txtSenha= addslashes($_POST['txtSenha']);
 
 	if($u->login($txtEmail,$txtSenha) == true){
-
+		
 		if( isset($_SESSION['txtEmail'])){
-			header("Location menuInicial.php");
+			header("Location: paginaInicial.php");
 		}else{
 			header("Location: index.php");
 		}

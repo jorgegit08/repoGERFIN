@@ -9,11 +9,7 @@
     public $txtEndereco="";
     public $txtInscricaoEstadual="";
     public $txtRazaoSocial="";
-    public $txtTelefone="";
-
-    //$idCliente,
-    //$txtCNPJ,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone
-    
+    public $txtTelefone="";    
 
     public function cadastrarCliente($txtCNPJ,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone){
         global $pdo;
@@ -40,6 +36,7 @@
             return false;
         }
     }
+
     public function alterarCliente($idCliente,$txtCNPJ,$txtContatoDireto,$txtEmail,$txtEndereco,$txtInscricaoEstadual,$txtRazaoSocial,$txtTelefone){
         global $pdo;
         
@@ -83,6 +80,7 @@
         }
 
     }
+    
     public function listarClientes(){
         global $pdo;
 

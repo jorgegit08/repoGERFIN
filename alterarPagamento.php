@@ -8,72 +8,79 @@ require 'TipoPagamento.class.php';
 <html lang="pt-br">
 <head>
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/styleEdicao.css" rel="stylesheet">
 	<title>Gerfin</title>
 </head>
 
 <body>
+	<script type="text/javascript" src="/TCC/assets/jquery/jQuery-3.3.1/jquery-3.3.1.js"></script>
 	
-	<?php require 'menu.php';?>
+	<?php 	require 'menu.php';
+			require 'assets/jquery/jQuery-Mask-Plugin-master/jQueryMascara.php';
+	?>
 		
 	<h1 class="tit">Alterar Pagamento</h1> 
 	<?php
 		$pg=new Pagamento;
 		$pg->consultarPagamento($_GET['idPagamento']);
 	?>
-		
-	<div class="cadastro">
 	
+	<form method="post" action="alterarPagamentoSalvar.php"> 
+		<div class="pesq pesqFiltro tamanho400 altura100percent borda">
+			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados do pagamento</h2> 
 		
-		<form method="post" action="alterarPagamentoSalvar.php"> 
-			<p> 
-				<label for="txtDescricao">Descrição:</label><br>
+			<div> 
+				<label for="txtDescricao">Descrição do pagamento:</label><br>
 				<input id="txtDescricao" name="txtDescricao" required="required" value="<?=$pg->txtDescricao?>" type="text" placeholder="Descrição" />
-			</p>
-			<p> 
-			<label for="txtDescricao">Descrição:</label><br>
-			<?php
-				
-				$tp= new TipoPagamento;
+			</div>
+						
+			<div>
+				<label for="txtDescricao">Tipo do pagamento:</label><br>
+				<?php
+					
+					$tp= new TipoPagamento;
 
-				echo "<select name='idTipoPagamento'>";
-				
-				foreach($tp->listarTiposPagamento() as $registroAtual){
+					echo "<select name='idTipoPagamento' class='selInfo'>";
 					
-					if($registroAtual['idTipoPagamento']==$_GET['idTipoPagamento']){
-						$selected = "selected";
-					}else{
-						$selected ="";
+					foreach($tp->listarTiposPagamento() as $registroAtual){
+						
+						if($registroAtual['idTipoPagamento']==$_GET['idTipoPagamento']){
+							$selected = "selected";
+						}else{
+							$selected ="";
+						}
+						
+						echo "<option value=".$registroAtual['idTipoPagamento']. " ".$selected.">".$registroAtual['txtDescricao']."</option>";
+						
 					}
-					
-					echo "<option value=".$registroAtual['idTipoPagamento']. " ".$selected.">".$registroAtual['txtDescricao']."</option>";
-					
-				}
-				echo "</select>";
-				?>
-				<br>
-			</p>
-			<p> 
-				<br>
-				<label for="datVencimento">Data Vencimento:</label><br>
+					echo "</select>";
+					?>
+					<br>
+			</div>
+
+			<div> 
+				<label for="datVencimento">Data vencimento:</label><br>
 				<input id="datVencimento" name="datVencimento" required="required" type="date" value="<?=$pg->datVencimento?>" placeholder="01/01/2020"/> 
-			</p>
-			<p> 
+			</div>
+
+			<div> 
 				<label for="datPagamento">Data de pagamento:</label><br>
 				<input id="datPagamento" name="datPagamento" type="date" value="<?=$pg->datPagamento?>" placeholder="01/01/2020"/> 
-			</p>
-			<p> 
-				<label for="vlrValor">Valor:</label><br>
-				<input id="vlrValor" name="vlrValor" required="required" value="<?=$pg->vlrValor?>" type="text" placeholder="100"/>
-			</p>
-			
-			<p> 
-				<input id="idPagamento" name="idPagamento" type="hidden" value="<?=$_GET['idPagamento']?>"/>
-			</p>
+			</div>
 
-			<p> 
-			  <input  type="submit" value="Alterar"/> 
-			</p>
-	</div>
-	
+			<div> 
+				<label for="vlrValor">Valor:</label><br>
+				<input id="vlrValor" name="vlrValor" required="required" value="<?=$pg->vlrValor?>" class="mascaraValor2" type="text" placeholder="100"/>
+			</div>
+			
+			<div> 
+				<input id="idPagamento" name="idPagamento" type="hidden" value="<?=$_GET['idPagamento']?>"/>
+			</div>
+
+			<div class="margemCima30"> 
+				<input type="submit" class="botaoCadastro" value="Alterar"/> 
+			</div>
+		</div>
+	</form>
 </body>
 </html>

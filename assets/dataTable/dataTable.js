@@ -101,6 +101,39 @@
 			$(tabela).removeClass( "no-footer" );
 		}
 		
+		function exibirDataTableResumido(tabela){
+
+			//Comando para aplicar o dataTable Resumido na página chamadora
+			$(tabela).DataTable({
+				"scrollCollapse": false,
+				"ordering": false,
+				"searching": false,
+				"paging": false,
+				"info": false,				
+				 "oLanguage": {
+					"sProcessing":   "Processando...",
+					"sLengthMenu":   "Mostrar _MENU_ registros",
+					"sZeroRecords":  "Não foram encontrados resultados",
+					"sInfo":         "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+					"sInfoEmpty":    "Mostrando de 0 até 0 de 0 registro(s)",
+					"sInfoFiltered": "",
+					"sInfoPostFix":  "",
+					"sSearch":       "Filtrar:",
+					"sUrl":          "",
+					"oPaginate": {
+						"sFirst":    "Primeiro",
+						"sPrevious": "Anterior",
+						"sNext":     "Seguinte",
+						"sLast":     "Último"
+					}
+				}		
+
+			})
+			
+			//Por padrão o datatable possui um linha abaixo da tabela que não fica boa com o layout do sigmas
+			//$(tabela).removeClass( "no-footer" );
+		}
+		
 		//Verifica se o Jquery foi de fato instanciado na aplicação
 		if (typeof jQuery != 'undefined') {
 			//Somente executa esse trecho após todo o carregamento da página
@@ -110,6 +143,13 @@
 				$( "#tblDataTable" ).each(function() {
 					
 					exibirDataTable( $( this ) );
+					
+				});
+				
+				//Caso não encontre a chamada normal de datatable, pode estar procurando pela chamada resumida
+				$( ".tblDataTableResumido" ).each(function() {
+					
+					exibirDataTableResumido( $( this ) );
 					
 				});	
 

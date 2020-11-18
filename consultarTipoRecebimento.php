@@ -31,8 +31,8 @@ require 'assets/dataTable/dataTable.js';
 	<h1 class="tit">Tipos de Recebimento</h1>
 	<?php require 'menu.php';?>
 	
-	<div style="display: flex; margin-left: 270px;">
-		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Tipo de Recebimento" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarTipoRecebimento()"> Cadastrar tipo de Recebimento
+	<div class="divBotaoCadastro">
+		<button class="botaoCadastro" title="Cadastrar Tipo de Recebimento" onclick="cadastrarTipoRecebimento()"><img src="assets/Icons/greenPlus.png" id="imgCadastro"> Cadastrar Tipo de Recebimento</button>
 	</div>
 	
 	<div class="pesq" style="background-color: #fff; width: 100%">
@@ -57,8 +57,8 @@ require 'assets/dataTable/dataTable.js';
 					echo "<td>".$registroAtual['txtDescricao']."</td>";
 					echo "<td>".
 						
-						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Tipo de Recebimento' style='cursor: hand; width: 25px; height: 25px;' onclick='alterarTipoRecebimento(".$registroAtual['idTipoRecebimento'].")'>".
-						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Tipo de Recebimento' style='cursor: hand; width: 25px; height: 25px;' onclick='excluirTipoRecebimento(".$registroAtual['idTipoRecebimento'].")'>".
+						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Tipo de Recebimento' id='btnAlterar' onclick='alterarTipoRecebimento(".$registroAtual['idTipoRecebimento'].")'>".
+						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Tipo de Recebimento' id='btnExcluir' onclick='excluirTipoRecebimento(".$registroAtual['idTipoRecebimento'].")'>".
 					
 					"</td>";
 

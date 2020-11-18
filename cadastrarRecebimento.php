@@ -9,96 +9,118 @@ require 'Cliente.class.php';
 <html lang="pt-br">
 <head>
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/styleEdicao.css" rel="stylesheet">
 	<title>Gerfin</title>
 </head>
 
 <body>
-	
-	<?php require 'menu.php';?>
+
+	<script type="text/javascript" src="/TCC/assets/jquery/jQuery-3.3.1/jquery-3.3.1.js"></script>
+		
+	<?php 	require 'menu.php';
+			require 'assets/jquery/jQuery-Mask-Plugin-master/jQueryMascara.php';
+	?>
 		
 	<h1 class="tit">Cadastrar Recebimento</h1> 
-		
-	<div class="cadastro">
 	
+	<form method="post" action="cadastrarRecebimentoSalvar.php">		
+		
+		<div class="pesq pesqFiltro tamanho400 altura100percent borda">
+			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados do recebimento</h2> 
 
-		<form method="post" action="cadastrarRecebimentoSalvar.php">
+			<div> 
+				<label for="numNFe">Nº NFe:</label><br>
+				<input id="numNFe" name="numNFe" required="required" type="text" placeholder="123"/>
+			</div>
 
-			<p> 
-			<label for="idCliente">Cliente:</label><br>
-			<?php
-				
-				$c= new Cliente;
+			<div> 
+				<label for="idCliente">Cliente:</label><br>
+				<?php
+					
+					$c= new Cliente;
 
-				echo "<select name='idCliente'>";
-				
-				foreach($c->listarClientes() as $registroAtual){
+					echo "<select name='idCliente' class='selInfo'>";
 					
-					
-					echo "<option value=".$registroAtual['idCliente']. " ".$selected.">".$registroAtual['txtRazaoSocial']."</option>";
-					
-				}
-				echo "</select>";
-				?>
-				<br>
-			</p> 
-			<p> 
-				<br>
+					foreach($c->listarClientes() as $registroAtual){
+						
+						echo "<option value=".$registroAtual['idCliente']. " ".$selected.">".$registroAtual['txtRazaoSocial']."</option>";
+						
+					}
+					echo "</select>";
+					?>
+			</div> 
+
+			<div> 
 				<label for="txtContrato">Contrato:</label><br>
 				<input id="txtContrato" name="txtContrato" required="required" type="text"  placeholder="Contrato"/> 
-			</p>
-			<p> 
-				<br>
+			</div>
+
+			<div> 
 				<label for="txtGestor">Gestor:</label><br>
 				<input id="txtGestor" name="txtGestor" required="required" type="text"  placeholder="Gestor"/> 
-			</p>
-			<p> 
-			<label for="idTipoRecebimento">Descrição:</label><br>
-			<?php
-				
-				$tr= new TipoRecebimento;
+			</div>
 
-				echo "<select name='idTipoRecebimento'>";
-				
-				foreach($tr->listarTiposRecebimento() as $registroAtual){
+			<div> 
+				<label for="idTipoRecebimento">Tipo de Recebimento:</label><br>
+				<?php
 					
+					$tr= new TipoRecebimento;
+
+					echo "<select name='idTipoRecebimento' class='selInfo'>";
 					
-					echo "<option value=".$registroAtual['idTipoRecebimento']. " ".$selected.">".$registroAtual['txtDescricao']."</option>";
-					
-				}
-				echo "</select>";
+					foreach($tr->listarTiposRecebimento() as $registroAtual){
+						
+						
+						echo "<option value=".$registroAtual['idTipoRecebimento']. " ".$selected.">".$registroAtual['txtDescricao']."</option>";
+						
+					}
+					echo "</select>";
 				?>
-				<br>
-			</p>
-			<p> 
-				<label for="txtDescricao">Descrição:</label><br>
-				<input id="txtDescricao" name="txtDescricao" required="required"  type="text" placeholder="Descrição" />
-			</p>
-			<p> 
-				<label for="vlrBruto">Valor Bruto:</label><br>
-				<input id="vlrBruto" name="vlrBruto" required="required"  type="text" placeholder="1,000" />
-			</p>
-			<p> 
-				<label for="vlrLiquido">Valor Líquido:</label><br>
-				<input id="vlrLiquido" name="vlrLiquido" required="required"  type="text" placeholder="1,000" />
-			</p>
-			<p> 
-				<br>
-				<label for="datVencimento">Data Vencimento:</label><br>
-				<input id="datVencimento" name="datVencimento" required="required" type="date"  placeholder="01/01/2020"/> 
-			</p>
-			<p> 
-				<label for="datPagamento">Data de Pagamento:</label><br>
-				<input id="datPagamento" name="datPagamento"  type="date"  placeholder="01/01/2020"/> 
-			</p>
-			<p> 
-				<label for="numNFe">Nº NFe:</label><br>
-				<input id="numNFe" name="numNFe" required="required"  type="text" placeholder="123"/>
-			</p>
+			</div>
 
-			<p> 
-			  <input  type="submit" value="Cadastrar"/> 
-			</p>
-	</div>
+			<div> 
+				<label for="txtDescricao">Descrição:</label><br>
+				<input id="txtDescricao" name="txtDescricao" required="required" type="text" placeholder="Descrição" />
+			</div>
+
+			<div> 
+				<label for="vlrBruto">Valor Bruto:</label><br>
+				<input id="vlrBruto" name="vlrBruto" class="mascaraValor2" required="required" type="text" placeholder="1,000" />
+			</div>
+
+			<div> 
+				<label for="vlrLiquido">Valor Líquido:</label><br>
+				<input id="vlrLiquido" name="vlrLiquido" class="mascaraValor2" required="required" type="text" placeholder="1,000" />
+			</div>
+
+			<div> 
+				<label for="datEmissao">Data Emissão:</label><br>
+				<input id="datEmissao" name="datEmissao" required="required" type="date" placeholder="01/01/2020"/> 
+			</div>
+
+			<div> 
+				<label for="datVencimento">Data Vencimento:</label><br>
+				<input id="datVencimento" name="datVencimento" required="required" type="date" placeholder="01/01/2020"/> 
+			</div>
+
+			<div> 
+				<label for="datPagamento">Data de Pagamento:</label><br>
+				<input id="datPagamento" name="datPagamento"  type="date" placeholder="01/01/2020"/> 
+			</div>
+
+			<div> 
+				<label for="indCancelado">Situação:</label><br>
+				<select id="indCancelado" name='indCancelado' class="selInfo">
+					<option value="0">Ativo</option>
+					<option value="1">Cancelado</option>
+				</select>
+			</div>
+
+			<div class="margemCima30"> 
+				<input type="submit" class="botaoCadastro" value="Cadastrar"/> 
+			</div>
+		</div>
+	</form>
 	
 </body>
 </html>

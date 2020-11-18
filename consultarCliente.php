@@ -30,12 +30,12 @@ require 'assets/dataTable/dataTable.js';
 
 	<h1 class="tit">Clientes</h1>
 	<?php require 'menu.php';?>
-	
-	<div style="display: flex; margin-left: 270px;">
-		<img src="/TCC/assets/Icons/adicionar.png" title="Cadastrar Cliente" style="cursor: hand; width: 40px; height: 40px;" onclick="cadastrarCliente()"> Cadastrar Cliente
+		
+	<div class="divBotaoCadastro">
+		<button class="botaoCadastro" title="Cadastrar Cliente" onclick="cadastrarCliente()"><img src="assets/Icons/greenPlus.png" id="imgCadastro"> Cadastrar Cliente</button>
 	</div>
 	
-	<div class="pesq" style="background-color: #fff; width: 100%">
+	<div class="pesq pesqTabela">
 		
 		<table id="tblDataTable" class="display" style="width:100%">
 			<thead>
@@ -67,8 +67,8 @@ require 'assets/dataTable/dataTable.js';
 					echo "<td>".$registroAtual['txtEmail']."</td>";
 					echo "<td>".
 						
-						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Cliente' style='cursor: hand; width: 25px; height: 25px;' onclick='alterarCliente(".$registroAtual['idCliente'].")'>".
-						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Cliente' style='cursor: hand; width: 25px; height: 25px;' onclick='excluirCliente(".$registroAtual['idCliente'].")'>".
+						"<img src='/TCC/assets/Icons/editar.png' title='Alterar Cliente' id='btnAlterar' onclick='alterarCliente(".$registroAtual['idCliente'].")'>".
+						"<img src='/TCC/assets/Icons/excluir.png' title='Excluir Cliente' id='btnExcluir' onclick='excluirCliente(".$registroAtual['idCliente'].")'>".
 					
 					"</td>";
 

@@ -7,6 +7,7 @@ require 'conexaoDB.php';
 <html lang="pt-br">
 <head>
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/styleEdicao.css" rel="stylesheet">
 	<title>Gerfin</title>
 </head>
 
@@ -20,19 +21,19 @@ require 'conexaoDB.php';
 		$tr->consultarTipoRecebimento($_GET['idTipoRecebimento']);
 	?>
 		
-	<div class="cadastro">
+	<form method="post" action="excluirTipoRecebimentoSalvar.php"> 
+		<div class="pesq pesqFiltro tamanho400  altura100percent borda">
+			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados do tipo de recebimento</h2> 
 		
-		<form method="post" action="excluirTipoRecebimentoSalvar.php"> 
 			<p> 
 				<label for="txtDescricao">Descrição do tipo de Recebimento:</label><br>
 				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=$tr->txtDescricao?>" type="text" placeholder="Descrição" />
 				<input type="hidden" name="idTipoRecebimento" value="<?=$_GET['idTipoRecebimento']?>">
 			</p>
 			
-
-			<p> 
-			  <input  type="submit" value="Excluir"/> 
-			</p>
+			<div class="margemCima30"> 
+				<input type="submit" id="btnExcluir" class="botaoCadastro" value="Excluir"/> 
+			</div>
 	</div>
 	
 </body>

@@ -16,7 +16,8 @@
 
 #principal{
 	width: 200px;
-	float: left;	
+	float: left;
+	cursor: hand; 	
 }
 
 ul{
@@ -92,21 +93,21 @@ h1{
 #cliente:target{
 	transform: translateX(250px);
 }
-input[type=text], input[type=password], input[type=email], input[type=date],input[type=number] {   
+
+input[type=text], input[type=password], input[type=email], input[type=date], input[type=number] {   
     width: 300px;   
     margin: 8px 0;  
     padding: 12px 20px;   
     display: inline-block;   
     border: 2px solid rgb(75, 136, 172);   
-	box-sizing: border-box; 
-	border-radius: 10px;
+    box-sizing: border-box; 
 }
 
 input[type=submit], input[type=button]{
 	cursor: pointer;
 	transition: all 0.2s linear;
 	font-size: 15px;
-	width: 100%;
+	width: 100px;
 	font-weight: bold;
 }
 input[type=submit]:hover{
@@ -116,6 +117,16 @@ input[type=button]:hover{
 	background: rgb(151, 146, 146);
 	color: red;
 }
+
+.selInfo {   
+    width: 300px;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid rgb(75, 136, 172);   
+    box-sizing: border-box; 
+}
+
 .cadastro{
 	display: flex;
 	width: 300px;
@@ -172,6 +183,146 @@ img{
 	margin-top: 40px;
 	border-radius: 5px;
 }
+
+.pesqTitulo{
+	height: 50px;
+}
+
+.pesqBloco1{
+	margin-top: 10px;
+	width: 510px; 
+	display: block; 
+	float: left;
+}
+
+.pesqBloco2{
+	margin-top: 10px;
+	width: 510px; 
+	display: block; 
+	float: left; 
+	margin-left: 10px;
+}
+
+.pesqTabela{
+	background-color: #fff;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.pesqFiltro{
+	height: 120px; 
+	width: 700px;
+	display: block;
+}
+
+.inputDataFiltro{
+	height: 40px;
+	width: 170px;
+	padding-right: 50px;
+}
+
+.alinhaElementoCentro{
+	margin: auto;
+}
+
+.alinhaElementoCentroTopo{
+	margin: 0 auto; 
+	width: 50%; 
+	text-align: center;
+}
+
+.alinhaTextoCentro{
+	text-align: center;
+}
+
+.alinhaLabel{
+	margin-top: 18px;
+}
+
+.altura40{
+	height: 40px;
+}
+
+.altura100{
+	height: 100px;
+}
+
+.altura150{
+	height: 150px;
+}
+
+.altura200{
+	height: 200px;
+}
+
+.altura250{
+	height: 250px;
+}
+
+.altura100percent{
+	height: 100%;
+}
+
+.tamanho170{
+	width: 170px;
+}
+
+.tamanho250{
+	width: 250px;
+}
+
+.tamanho300{
+	width: 300px;
+}
+
+.tamanho400{
+	width: 400px;
+}
+
+.tamanho500{
+	width: 500px;
+}
+
+.tamanho700{
+	width: 700px;
+}
+
+.tamanho800{
+	width: 800px;
+}
+
+.margemDireita30{
+	margin-right: 30px;
+}
+
+.margemEsquerda30{
+	margin-left: 30px;
+}
+
+.margemEsquerda40{
+	margin-left: 40px;
+}
+
+.margemBaixo10{
+	margin-bottom: 10px;
+}
+
+.margemBaixo30{
+	margin-bottom: 30px;
+}
+
+.margemCima30{
+	margin-top: 30px;
+}
+
+.margemCima10{
+	margin-top: 10px;
+}
+
+.dataBusca{
+	width: 100px;
+}
+	
 table,td,th{
 	
 	text-align: center;
@@ -192,5 +343,63 @@ th{
 	font-weight: bold;
 }
 
+.botaoCadastro{
+	cursor: hand;
+	width: 250px;
+	height: 30px;
+	float: left;
+	top: 50%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.divBotaoCadastro{
+	display: flex; 
+	margin-left: 270px;
+}
 
+#datInicial{
+	height:40px; 
+	width: 170px; 
+	margin-right: 50px
+}
+
+#datFinal{
+	height:40px; 
+	width: 170px; 
+}
+
+#imgCadastro{
+	width:20px; 
+	height:20px; 
+	margin-left:5px; 
+	margin-right: 5px;
+}
+
+#btnAlterar, #btnExcluir{
+	cursor: hand;
+}
+
+#txtObservacao{
+	width: 470px; 
+}
+
+.negrito{
+	font-weight: bold;
+}
+
+.arial18negrito{
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.proibido{
+	cursor: not-allowed;
+}
+
+.borda{
+	border: 1px solid;
+}
