@@ -22,8 +22,8 @@ require 'conexaoDB.php';
 	?>
 		
 	<form method="post" action="excluirTipoRecebimentoSalvar.php"> 
-		<div class="pesq pesqFiltro tamanho400  altura100percent borda">
-			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados do tipo de recebimento</h2> 
+		<div class="divPrincipalEdicao">
+			<h2 class="h2Edicao">Dados do tipo de recebimento</h2> 
 		
 			<p> 
 				<label for="txtDescricao">Descrição do tipo de Recebimento:</label><br>

@@ -17,8 +17,8 @@
 	<h1 class="tit">Cadastrar Favorecido</h1> 
 	
 	<form method="post" action="cadastrarFavorecidoSalvar.php"> 
-		<div class="pesq pesqFiltro tamanho400 altura100percent borda">
-			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados favorecido</h2> 
+		<div class="divPrincipalEdicao">
+			<h2 class="h2Edicao">Dados favorecido</h2> 
 		
 			<div> 
 				<label for="txtNome">Nome:</label><br>

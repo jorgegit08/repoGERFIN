@@ -401,5 +401,23 @@ th{
 }
 
 .borda{
-	border: 1px solid;
+	border: 1px solid; 
+}
+
+.divPrincipalEdicao{
+	background-color: rgb(231, 225, 225);
+	margin-left: 270px;
+	margin-top: 40px;
+	border-radius: 5px;
+	display: block;
+	width: 400px;
+	border: 1px solid; 
+	height: 100%;
+}
+
+.h2Edicao{
+	margin-bottom: 30px;	
+	text-align: center;
+	width: 400px;
+	margin-top: 10px;
 }

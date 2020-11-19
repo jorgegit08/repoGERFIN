@@ -21,8 +21,8 @@ require 'Usuario.class.php';
 	
 	<form method="post" action="cadastrarUsuarioSalvar.php">
 
-		<div class="pesq pesqFiltro tamanho400 altura100percent borda" style="margin: 0 auto">
-			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Novo acesso</h2> 
+		<div class="divPrincipalEdicao" style="margin: 0 auto">
+			<h2 class="h2Edicao">Novo acesso</h2> 
 
 			<div>
 				<label for="txtNome">Nome:</label><br>

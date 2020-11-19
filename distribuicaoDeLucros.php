@@ -129,7 +129,7 @@ require 'assets/dataTable/dataTable.js';
 		<div class="pesq pesqFiltro altura250 tamanho400 borda">
 			
 			<div style="margin-bottom: 50px">
-				<h2 class="margemBaixo30 alinhaTextoCentro tamanho400">Dados da NF-e</h2> 
+				<h2 class="h2Edicao">Dados da NF-e</h2> 
 				<label for="idCliente">NF-e nº: </label>
 				<input type="text" id='numNFe' name='numNFe' required="required" placeholder='123'" >
 
@@ -139,7 +139,7 @@ require 'assets/dataTable/dataTable.js';
 
 			<fieldset>
 				<table id="tblDistrLucro" class="tblDataTableResumido stripe" class="display" style="width:100%">
-					<thead>
+					<thead style="font-weight: bold">
 					<TR>
 						<td>Favorecido</td>
 						<td>Porcentagem</td>

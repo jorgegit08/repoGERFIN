@@ -23,8 +23,8 @@ require 'conexaoDB.php';
 		
 	<form method="post" action="excluirFavorecidoSalvar.php"> 
 		
-		<div class="pesq pesqFiltro tamanho400  altura100percent borda">
-			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados do favorecido</h2> 
+		<div class="divPrincipalEdicao">
+			<h2 class="h2Edicao">Dados do favorecido</h2> 
 
 			<div> 
 				<label for="txtNome">Nome:</label><br>

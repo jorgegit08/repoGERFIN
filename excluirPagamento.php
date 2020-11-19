@@ -24,8 +24,8 @@ require 'TipoPagamento.class.php';
 	
 	<form method="post" action="excluirPagamentoSalvar.php"> 	
 		
-		<div class="pesq pesqFiltro tamanho400  altura100percent borda">
-			<h2 class="margemBaixo30 alinhaTextoCentro tamanho400 margemCima10">Dados do pagamento</h2> 
+		<div class="divPrincipalEdicao">
+			<h2 class="h2Edicao">Dados do pagamento</h2> 
 			
 			<div> 
 				<label for="txtDescricao">Descrição do pagamento:</label><br>
