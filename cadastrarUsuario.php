@@ -31,12 +31,12 @@ require 'Usuario.class.php';
 			
 			<div>
 				<label for="txtCPF">CPF/CNPJ:</label><br>
-				<input id="txtCPF" name="txtCPF" required="required" class="mascaraCPF mascaraCNPJ" type="text" placeholder="000.000.000-00"/>
+				<input id="txtCPF" name="txtCPF" required="required" class="mascaraCPF" type="text" placeholder="000.000.000-00"/>
 			</div>
 
 			<div>
 				<label for="txtEmail">E-mail:</label><br>
-				<input id="txtEmail" name="txtEmail" required="required" type="email" placeholder="contato@htmlecsspro.com"/>
+				<input id="txtEmail" name="txtEmail" required="required" type="email" placeholder="email@asj.adv.br"/>
 			</div>
 
 			<div>
@@ -46,7 +46,7 @@ require 'Usuario.class.php';
 			
 			<div>
 				<label for="txtTelefone">Telefone:</label><br>
-				<input id="txtTelefone" name="txtTelefone" required="required" type="text" class="mascaraDDDtelefone" placeholder="(DD) 0000-00000" />
+				<input id="txtTelefone" name="txtTelefone" required="required" type="text" class="mascaraDDDTelefone" placeholder="(DD) 0000-00000" />
 			</div>
 			
 			<div>
@@ -59,6 +59,11 @@ require 'Usuario.class.php';
 				<input id="txtConfirmaSenha" name="txtConfirmaSenha" required="required" type="password" placeholder="Confirmar senha" />
 			</div>
 			
+			<div class="margemCima30">
+				<label for="indAceitaLGPD">Li e aceitos os <a href="http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13853.htm#:~:text=LEI%20N%C2%BA%2013.853%2C%20DE%208%20DE%20JULHO%20DE%202019&text=Altera%20a%20Lei%20n%C2%BA%2013.709,Art." target="_blank">termos</a> da LGPD:</label>
+				<input id="indAceitaLGPD" name="indAceitaLGPD" required="required" type="checkbox"/>
+			</div>
+
 			<div class="margemCima30"> 
 				<input type="submit" class="botaoCadastro" value="Cadastrar"/> 
 			</div>

@@ -29,7 +29,9 @@ require 'assets/dataTable/dataTable.js';
 	</script>	
 
 	<h1 class="tit">Clientes</h1>
-	<?php require 'menu.php';?>
+	<?php require 'menu.php';
+		  require 'assets/jquery/jQuery-Mask-Plugin-master/jQueryMascara.php';
+	?>
 		
 	<div class="divBotaoCadastro">
 		<button class="botaoCadastro" title="Cadastrar Cliente" onclick="cadastrarCliente()"><img src="assets/Icons/greenPlus.png" id="imgCadastro"> Cadastrar Cliente</button>
@@ -59,7 +61,7 @@ require 'assets/dataTable/dataTable.js';
 					echo "<tr>";
 
 					echo "<td>".$registroAtual['txtRazaoSocial']."</td>";
-					echo "<td>".$registroAtual['txtCNPJ']."</td>";
+					echo "<td><input type='text' class='mascaraCNPJ' style='width: 100px; margin: 0; padding: 0; border: 0; box-sizing: none' value=".$registroAtual['txtCNPJ']."></td>";
 					echo "<td>".$registroAtual['txtInscricaoEstadual']."</td>";
 					echo "<td>".$registroAtual['txtEndereco']."</td>";
 					echo "<td>".$registroAtual['txtTelefone']."</td>";

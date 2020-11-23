@@ -3,12 +3,10 @@
     
     require 'conexaoDB.php';
     require 'assets/fpdf/fpdf.php';
-    require 'Recebimento.class.php';
-    require 'DistrLucro.class.php';
+    require 'viwRelDistribuicaoLucro.class.php';
     require 'manipulacaoDatas.php';
 
-    $r = new Recebimento;
-    $dt = new DistrLucro;
+    $vdl = new viwRelDistribuicaoLucro;
 
     $datInicial = addslashes($_POST['datInicial']);
     $datFinal = addslashes($_POST['datFinal']);

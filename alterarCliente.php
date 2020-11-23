@@ -8,12 +8,15 @@ require 'conexaoDB.php';
 <head>
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/styleEdicao.css" rel="stylesheet">
+	<script type="text/javascript" src="/TCC/assets/jquery/jQuery-3.3.1/jquery-3.3.1.js"></script>
+	
 	<title>Gerfin</title>
 </head>
 
 <body>
-	
-	<?php require 'menu.php';?>
+	<?php require 'menu.php';
+		  require 'assets/jquery/jQuery-Mask-Plugin-master/jQueryMascara.php';
+	?>
 		
 	<h1 class="tit">Alterar Cliente</h1> 
 	<?php
@@ -28,11 +31,11 @@ require 'conexaoDB.php';
 			<h2 class="h2Edicao">Dados do cliente</h2> 
 			<div> 
 				<label for="txtRazaoSocial">Nome:</label><br>
-				<input id="txtRazaoSocial" name="txtRazaoSocial" required="required" value="<?=$c->txtRazaoSocial?>" type="text" placeholder="nome" />
+				<input id="txtRazaoSocial" name="txtRazaoSocial" required="required" value="<?=$c->txtRazaoSocial?>" type="text" placeholder="Razão Social" />
 			</div>
 			<div> 
 				<label for="txtCNPJ">CPF/CNPJ:</label><br>
-				<input id="txtCNPJ" name="txtCNPJ" required="required" value="<?=$c->txtCNPJ?>" type="text" placeholder="99 999 999 999"/> 
+				<input id="txtCNPJ" name="txtCNPJ" class="mascaraCNPJ" required="required" value="<?=$c->txtCNPJ?>" type="text"/> 
 			</div>
 			<div> 
 				<label for="txtEmail">E-mail:</label><br>
@@ -48,7 +51,7 @@ require 'conexaoDB.php';
 			</div>
 			<div> 
 				<label for="txtTelefone">Telefone:</label><br>
-				<input id="txtTelefone" name="txtTelefone" required="required" type="text" value="<?=$c->txtTelefone?>" placeholder="99999 9999" />
+				<input id="txtTelefone" name="txtTelefone" class="mascaraDDDTelefone" required="required" type="text" value="<?=$c->txtTelefone?>" />
 			</div>
 			<div> 
 				<label for="txtInscricaoEstadual">Inscrição estadual:</label><br>
