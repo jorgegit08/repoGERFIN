@@ -28,7 +28,7 @@ require '../assets/util/conexaoDB.php';
 
 			<div> 
 				<label for="txtNome">Nome:</label><br>
-				<input id="txtNome" name="txtNome" disabled="disabled" value="<?=$f->txtNome?>" type="text" placeholder="nome" />
+				<input id="txtNome" name="txtNome" disabled="disabled" value="<?=utf8_encode($f->txtNome)?>" type="text" placeholder="nome" />
 			</div>
 
 			<div> 

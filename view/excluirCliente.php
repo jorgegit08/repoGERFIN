@@ -28,7 +28,7 @@ require '../assets/util/conexaoDB.php';
 
 			<div> 
 				<label for="txtRazaoSocial">Nome:</label><br>
-				<input id="txtRazaoSocial" name="txtRazaoSocial" required="required" disabled="disabled" value="<?=$c->txtRazaoSocial?>" type="text" placeholder="nome" />
+				<input id="txtRazaoSocial" name="txtRazaoSocial" required="required" disabled="disabled" value="<?=utf8_encode($c->txtRazaoSocial)?>" type="text" placeholder="nome" />
 			</div>
 
 			<div> 

@@ -29,12 +29,12 @@ require '../model/TipoPagamento.class.php';
 			
 			<div> 
 				<label for="txtDescricao">Descrição do pagamento:</label><br>
-				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=$pg->txtDescricao?>" type="text" placeholder="Descrição" />
+				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=utf8_encode($pg->txtDescricao)?>" type="text" placeholder="Descrição" />
 			</div>
 			
 			<div> 
 			<label for="desctppagamento">Tipo do pagamento:</label><br>
-				<input id="desctppagamento" name="desctppagamento" disabled="disabled" value="<?=$pg->txtDescricao?>" type="text" placeholder="Descrição" />
+				<input id="desctppagamento" name="desctppagamento" disabled="disabled" value="<?=utf8_encode($pg->txtDescricao)?>" type="text" placeholder="Descrição" />
 			</div>
 
 			<div> 

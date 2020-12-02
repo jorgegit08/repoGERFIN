@@ -17,7 +17,7 @@ if(isset($_POST['txtEmail']) && !empty($_POST['txtEmail'])
     if( $novaSenha ){
         $titulo     = 'Sucesso!';
         $msg        = 'A senha foi enviada ao e-mail cadastrado!';
-        $icone      = 'sucess';
+        $icone      = 'success';
         $location   = '../index.php';
 
         $email = 'jorgin.silva@gmail.com';

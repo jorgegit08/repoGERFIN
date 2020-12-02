@@ -27,7 +27,7 @@ require '../assets/util/conexaoDB.php';
 		
 			<p> 
 				<label for="txtDescricao">Descrição do tipo de Recebimento:</label><br>
-				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=$tr->txtDescricao?>" type="text" placeholder="Descrição" />
+				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=utf8_encode($tr->txtDescricao)?>" type="text" placeholder="Descrição" />
 				<input type="hidden" name="idTipoRecebimento" value="<?=$_GET['idTipoRecebimento']?>">
 			</p>
 			

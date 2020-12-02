@@ -28,7 +28,7 @@ require '../assets/util/conexaoDB.php';
 		
 			<div> 
 				<label for="txtDescricao">Descrição do tipo de pagamento:</label><br>
-				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=$tp->txtDescricao?>" type="text" placeholder="Descrição" />
+				<input id="txtDescricao" name="txtDescricao" disabled="disabled" value="<?=utf8_encode($tp->txtDescricao)?>" type="text" placeholder="Descrição" />
 				<input type="hidden" name="idTipoPagamento" value="<?=$_GET['idTipoPagamento']?>">
 			</div>
 			

@@ -34,9 +34,9 @@ require '../assets/dataTable/dataTable.js';
 						if( ! $.isNumeric( resultadoAjax.replace(",",".") ) ){
 							//Apresenta o erro
 							Swal.fire({
-								title: 				'Erro',
+								title: 				'Atenção',
 								text: 				resultadoAjax,
-								icon: 				'error',
+								icon: 				'info',
 								confirmButtonText: 	'Ok'
 							});
 

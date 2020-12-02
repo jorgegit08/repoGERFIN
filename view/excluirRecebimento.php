@@ -34,7 +34,7 @@ require '../model/Cliente.class.php';
 
 			<div> 
 				<label for="txtCliente">Contrato:</label><br>
-				<input id="txtCliente" name="txtCliente" disabled="disabled" type="text" value="<?=$c->txtRazaoSocial?>" placeholder="Contrato"/> 
+				<input id="txtCliente" name="txtCliente" disabled="disabled" type="text" value="<?=utf8_encode($c->txtRazaoSocial)?>" placeholder="Contrato"/> 
 			</div> 
 
 			<div> 
@@ -44,7 +44,7 @@ require '../model/Cliente.class.php';
 
 			<div>
 				<label for="txtGestor">Gestor:</label><br>
-				<input id="txtGestor" name="txtGestor" disabled="disabled" type="text" value="<?=$r->txtGestor?>" placeholder="Gestor"/> 
+				<input id="txtGestor" name="txtGestor" disabled="disabled" type="text" value="<?=utf8_encode($r->txtGestor)?>" placeholder="Gestor"/> 
 			</div>
 
 			<div> 
@@ -54,7 +54,7 @@ require '../model/Cliente.class.php';
 
 			<div> 
 				<label for="txtDescricao">Descrição:</label><br>
-				<input id="txtDescricao" name="txtDescricao" disabled="disabled"  type="text" value="<?=$r->txtDescricao?>" placeholder="Descrição" />
+				<input id="txtDescricao" name="txtDescricao" disabled="disabled"  type="text" value="<?=utf8_encode($r->txtDescricao)?>" placeholder="Descrição" />
 			</div>
 
 			<div> 
