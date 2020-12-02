@@ -16,6 +16,28 @@
 			$('.mascaraValor').mask('000.000.000.000.000,00', {reverse: true});
 			$('.mascaraValor2').mask("#.##0,00", {reverse: true});
 			$('.mascaraPorcento').mask('##0,00%', {reverse: true});
+			$('.mascaraEmailAsj').mask('ZZZZZZZZZZZZZZZZZZZZ', {
+				translation: {
+					'Z': {
+						pattern: /[\w\-\.]/
+					}
+				}
+			});
+			$('.mascaraCodigoValidacao').mask('ZZZZZZ', {
+				translation: {
+					'Z': {
+						pattern: /\d/
+					}
+				}
+			});
+			
+
+			//TODO
+			$('#txtCPFCNPJ').on( "keypress", function() {
+				
+				( $( this ).length > 11 ) ?  $( this ).mask('00.000.000/0000-00') : $( this ).mask('000.000.000-00');
+
+			});
 
 			//Ao enviar o formulário (Submit) o sistema retira todas as máscara incluídas na tela
 			$( "form" ).submit( function( event ) {
@@ -30,6 +52,8 @@
 				//$('.mascaraValor').unmask();
 				//$('.mascaraValor2').unmask();
 				$('.mascaraPorcento').unmask();
+				$('.mascaraEmailAsj').val( $('.mascaraEmailAsj').val() + '@asj.adv.br' );
+				
 			});
 		});
 	</script>
