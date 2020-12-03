@@ -7,7 +7,7 @@ $u=new Usuario;
 
 if( isset($_POST['txtEmail']) && !empty($_POST['txtEmail']) && isset($_POST['txtSenha']) && !empty($_POST['txtSenha'])){
 
-	$txtEmail = addslashes($_POST['txtEmail']);
+	$txtEmail = addslashes($_POST['txtEmail'] . '@asj.adv.br');
 	$txtSenha = addslashes($_POST['txtSenha']);
 
 	if( $u->login($txtEmail,$txtSenha) ){

@@ -129,7 +129,7 @@
     $pdf->Ln(10);
     
     $pdf->SetLeftMargin(40);
-    $pdf->Image('../assets/imagens/assinatura.png',null,null,120);
+    $pdf->Image('../assets/imagens/assinaturaZuleika.png',null,null,120);
     $pdf->SetLeftMargin(10);
     $pdf->Ln(8);
 

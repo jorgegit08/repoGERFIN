@@ -123,7 +123,7 @@
 
 
         $sql = "SELECT p.idPagamento,p.idTipoPagamento,p.txtDescricao,tp.txtDescricao AS desctppagamento,DATE_FORMAT(p.datVencimento, '%d/%m/%Y') as datVencimento,".
-               "       DATE_FORMAT(p.datPagamento, '%d/%m/%Y') as datPagamento,format(p.vlrValor,2,'de_DE') as vlrValor, dl.numNFe ". 
+               "       DATE_FORMAT(p.datPagamento, '%d/%m/%Y') as datPagamento,format(p.vlrValor,2,'de_DE') as vlrValor, p.vlrValor as vlrValorSemTratamento, dl.numNFe ". 
                "  FROM pagamento p ". 
                " INNER JOIN tipoPagamento tp on tp.idTipoPagamento=p.idTipoPagamento ".
                "  LEFT JOIN distrLucro dl on dl.idPagamento=p.idPagamento ".

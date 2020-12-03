@@ -17,9 +17,6 @@ require '../model/Usuario.class.php';
     <script>
         function excluirConta(){
             
-			
-
-
 			swal.fire({
 				title: 'Tem certeza que deseja excluir essa conta?',
 				text:  'Digite sua senha para confirmar.',
@@ -33,20 +30,19 @@ require '../model/Usuario.class.php';
 				cancelButtonText: 'Cancelar',
 				showLoaderOnConfirm: true
 				
-				}).then((result) => {
+			}).then((result) => {
+			
+				if (result.isConfirmed) {
+					window.location.href='../controller/excluirUsuario.php?txtSenha='+result.value;
 				
-					if (result.isConfirmed) {
-						window.location.href='../controller/excluirUsuario.php?txtSenha='+result.value;
+				}else if(result.isDismissed){
 					
-					}else if(result.isDismissed){
-						
-						swal.fire({
-							title: 'Cancelado',
-							text:  'Cancelado pelo usuário.',
-							icon: 'warning'
-						})
-					}
-
+					swal.fire({
+						title: 'Cancelado',
+						text:  'Cancelado pelo usuário.',
+						icon: 'warning'
+					})
+				}
 			})
 
         }

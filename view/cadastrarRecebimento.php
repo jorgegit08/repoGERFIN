@@ -43,7 +43,7 @@ require '../model/Cliente.class.php';
 					
 					foreach($c->listarClientes() as $registroAtual){
 						
-						echo "<option value=".$registroAtual['idCliente']. " ".$selected.">".$registroAtual['txtRazaoSocial']."</option>";
+						echo "<option value=".$registroAtual['idCliente']. " ".$selected.">".utf8_encode( $registroAtual['txtRazaoSocial'] )."</option>";
 						
 					}
 					echo "</select>";
@@ -71,7 +71,7 @@ require '../model/Cliente.class.php';
 					foreach($tr->listarTiposRecebimento() as $registroAtual){
 						
 						
-						echo "<option value=".$registroAtual['idTipoRecebimento']. " ".$selected.">".$registroAtual['txtDescricao']."</option>";
+						echo "<option value=".$registroAtual['idTipoRecebimento']. " ".$selected.">".utf8_encode( $registroAtual['txtDescricao'] )."</option>";
 						
 					}
 					echo "</select>";

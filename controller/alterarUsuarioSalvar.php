@@ -5,7 +5,6 @@ require '../assets/util/conexaoDB.php';
 
 $u = new Usuario();
 
-
 if(isset($_POST['txtEmail']) && !empty($_POST['txtEmail'])
     &&    isset($_POST['txtCPF']) && !empty($_POST['txtCPF'])
     &&    isset($_POST['txtSenha']) && !empty($_POST['txtSenha'])
@@ -13,7 +12,7 @@ if(isset($_POST['txtEmail']) && !empty($_POST['txtEmail'])
     &&    isset($_POST['datNascimento']) && !empty($_POST['datNascimento'])
     &&    isset($_POST['txtTelefone']) && !empty($_POST['txtTelefone'])   ){
 
-    $txtEmail = addslashes($_POST['txtEmail']);
+    $txtEmail = addslashes($_POST['txtEmail'] . '@asj.adv.br');
     $txtCPF = addslashes($_POST['txtCPF']);
     $txtNome = addslashes($_POST['txtNome']);
     $txtSenha = addslashes($_POST['txtSenha']);

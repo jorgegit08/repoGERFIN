@@ -1,6 +1,8 @@
 <?php
 require '../model/Favorecido.class.php';
 require '../assets/util/conexaoDB.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +14,11 @@ require '../assets/util/conexaoDB.php';
 </head>
 
 <body>
-	
-	<?php require 'menu.php';?>
+	<script type="text/javascript" src="/TCC/assets/jquery/jQuery-3.3.1/jquery-3.3.1.js"></script>
+
+	<?php require 'menu.php';
+		  require '../assets/jquery/jQuery-Mask-Plugin-master/jQueryMascara.php';
+	?>
 		
 	<h1 class="tit">Alterar Favorecido</h1> 
 	<?php

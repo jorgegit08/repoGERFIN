@@ -51,7 +51,7 @@ require '../assets/dataTable/dataTable.js';
 			$dataFinal = $_POST['datFinal'];
 		}else{
 			$dataInicial = date("Y-m-01");
-			$dataFinal = date("Y-m-d");
+			$dataFinal = date("Y-m-t");
 		}
 
 	?>

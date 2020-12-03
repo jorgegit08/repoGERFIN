@@ -34,5 +34,6 @@
 		<li><a href="" class="voltar">Voltar</a></li>
 		<li><a href="relatorioRecebimento.php">Recebimentos</a></li>
 		<li><a href="relatorioReciboDistrLucro.php">Recibo de Distribuição de Lucros</a></li>
+		<li><a href="relatorioDespesasMensais.php">Despesas Mensais</a></li>
 	</ul>
 </nav>

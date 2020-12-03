@@ -105,18 +105,18 @@ require '../assets/dataTable/dataTable.js';
 				foreach($rm->listarRecebimentosPorPeriodo($dataInicial,$dataFinal) as $registroAtual){
 					echo "<tr>";
 
-					echo "<td>".$registroAtual['txtRazaoSocial']."</td>";
-					echo "<td>".$registroAtual['txtContrato']."</td>";
-					echo "<td>".$registroAtual['txtGestor']."</td>";
-					echo "<td>".$registroAtual['desctpRecebimento']."</td>";
-					echo "<td>".$registroAtual['txtDescricao']."</td>";
+					echo "<td>".utf8_encode( $registroAtual['txtRazaoSocial'] )."</td>";
+					echo "<td>".utf8_encode( $registroAtual['txtContrato'] )."</td>";
+					echo "<td>".utf8_encode( $registroAtual['txtGestor'] )."</td>";
+					echo "<td>".utf8_encode( $registroAtual['desctpRecebimento'] )."</td>";
+					echo "<td>".utf8_encode( $registroAtual['txtDescricao'] )."</td>";
 					echo "<td>".$registroAtual['vlrBrutoFormatado']."</td>";
 					echo "<td>".$registroAtual['vlrLiquidoFormatado']."</td>";
 					echo "<td>".$registroAtual['datEmissao']."</td>";
 					echo "<td>".$registroAtual['datVencimento']."</td>";
 					echo "<td>".$registroAtual['datPagamento']."</td>";
 					echo "<td>".$registroAtual['numNFe']."</td>";
-					echo "<td>".$registroAtual['txtDescSituacao']."</td>";
+					echo "<td>".utf8_encode( $registroAtual['txtDescSituacao'] )."</td>";
 					
 					echo "<td>".
 						
